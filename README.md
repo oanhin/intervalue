@@ -38,13 +38,13 @@ If you are on Windows or using NW.js and Node.js versions other than recommended
 
 After first run, you'll likely encounter runtime error complaining about node_sqlite3.node not being found, copy the file from the neighboring directory to where the program tries to find it, and run again. (e.g. from `byteball/node_modules/sqlite3/lib/binding/node-v47-darwin-x64` to `byteball/node_modules/sqlite3/lib/binding/node-webkit-v0.14.7-darwin-x64`)
 
-Then run Byteball desktop client:
+Then run Intervalue desktop client:
 
 ```sh
 /path/to/your/nwjs/nwjs .
 ```
 
-## Build Byteball App Bundles
+## Build Intervalue App Bundles
 
 All app bundles will be placed at `../intervaluebuilds` dir, so create it first: `mkdir -p ../intervaluebuilds`
 
@@ -87,9 +87,9 @@ All app bundles will be placed at `../intervaluebuilds` dir, so create it first:
 
 TBD
 
-## Byteball Backups and Recovery
+## Intervalue Backups and Recovery
 
-Byteball uses a single extended private key for all wallets, BIP44 is used for wallet address derivation.  There is a BIP39 mnemonic for backing up the wallet key, but it is not enough.  Private payments and co-signers of multisig wallets are stored only in the app's data directory, which you have to back up manually:
+Intervalue uses a single extended private key for all wallets, BIP44 is used for wallet address derivation.  There is a BIP39 mnemonic for backing up the wallet key, but it is not enough.  Private payments and co-signers of multisig wallets are stored only in the app's data directory, which you have to back up manually:
 
 * macOS: `~/Library/Application Support/intervalue`
 * Linux: `~/.config/byteball`
