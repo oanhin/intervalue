@@ -1,8 +1,4 @@
-Byteball is a wallet for storage and transfer of decentralized value.  See [byteball.org](https://byteball.org/).
-
-## Binary Downloads
-
-[Byteball.org](https://byteball.org/)
+Byteball is a wallet for storage and transfer of decentralized value.  
 
 ## Main Features
 
@@ -15,8 +11,8 @@ Download and install [NW.js v0.14.7 LTS](https://dl.nwjs.io/v0.14.7) and [Node.j
 Clone the source:
 
 ```sh
-git clone https://github.com/byteball/byteball.git
-cd byteball
+git clone https://github.com/intervalue-hashnet/intervalue.git
+cd intervalue 
 ```
 
 If you are building for testnet, switch to testnet branch:
