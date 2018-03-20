@@ -46,7 +46,7 @@ Then run Byteball desktop client:
 
 ## Build Byteball App Bundles
 
-All app bundles will be placed at `../byteballbuilds` dir, so create it first: `mkdir -p ../byteballbuilds`
+All app bundles will be placed at `../intervaluebuilds` dir, so create it first: `mkdir -p ../intervaluebuilds`
 
 
 ### Android
@@ -83,7 +83,7 @@ All app bundles will be placed at `../byteballbuilds` dir, so create it first: `
 - `grunt linux64`
 
 
-## About Byteball
+## About Intervalue
 
 TBD
 
@@ -91,14 +91,14 @@ TBD
 
 Byteball uses a single extended private key for all wallets, BIP44 is used for wallet address derivation.  There is a BIP39 mnemonic for backing up the wallet key, but it is not enough.  Private payments and co-signers of multisig wallets are stored only in the app's data directory, which you have to back up manually:
 
-* macOS: `~/Library/Application Support/byteball`
+* macOS: `~/Library/Application Support/intervalue`
 * Linux: `~/.config/byteball`
 * Windows: `%LOCALAPPDATA%\byteball`
 
 
 ## Translations
 
-Byteball uses standard gettext PO files for translations and [Crowdin](https://crowdin.com/project/byteball) as the front-end tool for translators. To join our team of translators, please create an account at [Crowdin](https://crowdin.com) and translate the Byteball documentation and application text into your native language.
+Intervalue uses standard gettext PO files for translations and [Crowdin](https://crowdin.com/project/intervalue) as the front-end tool for translators. To join our team of translators, please create an account at [Crowdin](https://crowdin.com) and translate the Intervalue documentation and application text into your native language.
 
 To download and build using the latest translations from Crowdin, please use the following commands:
 
@@ -109,12 +109,6 @@ node crowdin_download.js
 
 This will download all partial and complete language translations while also cleaning out any untranslated ones.
 
-
-## Support
-
-* [GitHub Issues](https://github.com/byteball/byteball/issues)
-  * Open an issue if you are having problems with this project
-* [Email Support](mailto:byteball@byteball.org)
 
 ## Credits
 
