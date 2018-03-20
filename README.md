@@ -61,13 +61,13 @@ All app bundles will be placed at `../intervaluebuilds` dir, so create it first:
 - Run `make ios-debug`
   * In case of ios-deploy missing error: `npm install -g ios-deploy`
   * In case of `DeviceSupport` missing error, run `cd /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport/ && sudo ln -s 10.3.1\ \(14E8301\)/ 10.3`
-  * If you encounter 'bitcore' not found after app launch, install it also `npm install bitcore-lib` and remove `../bytebalbuilds/project-IOS` folder completely, then rerun make again.
-  * On code signing error, open Xcode project `../byteballbuilds/project-IOS/platforms/ios/Byteball.xcodeproj` in Xcode, open project properties, select Byteball target and set your AppleID account as a team. Xcode may also ask you to change bundle identifier to be unique, just append any random string to 'org.byteball.wallet' bundle identifier.
+  * If you encounter 'bitcore' not found after app launch, install it also `npm install bitcore-lib` and remove `../intervaluebuilds/project-IOS` folder completely, then rerun make again.
+  * On code signing error, open Xcode project `../intervaluebuilds/project-IOS/platforms/ios/Intervalue.xcodeproj` in Xcode, open project properties, select Intervalue target and set your AppleID account as a team. Xcode may also ask you to change bundle identifier to be unique, just append any random string to 'org.intervalue.wallet' bundle identifier.
 
 ### macOS
 
 - `grunt desktop`
-- copy `node_modules` into the app bundle ../byteballbuilds/Byteball/osx64/Byteball.app/Contents/Resources/app.nw, except those that are important only for development (karma, grunt, jasmine)
+- copy `node_modules` into the app bundle ../intervaluebuilds/Intervalue/osx64/Byteball.app/Contents/Resources/app.nw, except those that are important only for development (karma, grunt, jasmine)
 - `grunt dmg`
 
 ### Windows
