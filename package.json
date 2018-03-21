@@ -1,18 +1,18 @@
 {
-  "name": "intervalue",
+  "name": "byteball-tn",
   "description": "Smart payments made simple",
-  "author": "intervalue",
+  "author": "Byteball",
   "version": "2.1.0t",
   "keywords": [
     "wallet",
-    "intervalue",
+    "byteball",
     "decentralized",
     "multisignature",
     "bitcoin"
   ],
   "main": "public/index.html",
   "window": {
-    "title": "intervalue wallet",
+    "title": "Byteball wallet",
     "icon": "./public/img/icons/icon-white-256.png",
     "show": true,
     "visible": true,
@@ -29,14 +29,14 @@
     "plugin": false
   },
   "chromium-args": "--proxy-server=http://127.1.2.7 --password-store=basic --disable-password-generation",
-  "homepage": "https://github.com/intervalue-hashnet/",
+  "homepage": "https://github.com/byteball/byteball",
   "license": "MIT",
   "repository": {
-    "url": "git://github.com/intervalue-hashnet",
+    "url": "git://github.com/byteball/byteball.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/intervalue-hashnet/intervalue/issues"
+    "url": "https://github.com/byteball/byteball/issues"
   },
   "browser": {
     "request": "browser-request",
@@ -47,7 +47,7 @@
     "bip38": "^1.4.0",
     "bitcore-lib": "^0.13.14",
     "bitcore-mnemonic": "~1.0.0",
-    "intervaluecore": "git+https://github.com/intervalue-hashnet/intervaluecore.git",
+    "byteballcore": "git+https://github.com/byteball/byteballcore.git#testnet",
     "grunt": "^1.0.1",
     "grunt-angular-gettext": "^2.2.3",
     "grunt-browserify": "^5.0.0",

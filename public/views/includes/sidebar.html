@@ -1,3 +1,4 @@
+<!-- 侧边栏视图 -->
 <nav class="sidebar left-off-canvas-menu" ng-controller="sidebarController as sidebar">
   <header>
     <!--<logo ng-if="!sidebar.isWindowsPhoneApp" negative="false" width="80"></logo>-->
@@ -5,6 +6,7 @@
     <div ng-include="'views/includes/versionAndWalletType.html'"></div>
   </header>
   <ul class="off-canvas-list">
+    <!-- 小钱包 -->
     <li ng-show="sidebar.wallets[0]"
     ng-repeat="item in sidebar.wallets track by $index"
     ng-class="{'selected': item.id == index.walletId}"
@@ -16,16 +18,18 @@
       <div class="size-12" ng-show="item.n > 1" translate>{{item.m}}-of-{{item.n}}</div>
     </a>
     </li>
-    <li>
-      <a ng-click="$root.go('create')" class="oh">
-        <i class="icon-arrow-right3 size-18 right m10t"></i>
-        <i class="fi-plus size-24 icon"></i>
-        <div class="tu text-bold">
-          <span class="size-12" translate>Add wallet</span>
-        </div>
-        <div translate>Create a new wallet</div>
-      </a>
-    </li>
+    <!-- 添加钱包 -->
+    <!--<li>-->
+      <!--<a ng-click="$root.go('create')" class="oh">-->
+        <!--<i class="icon-arrow-right3 size-18 right m10t"></i>-->
+        <!--<i class="fi-plus size-24 icon"></i>-->
+        <!--<div class="tu text-bold">-->
+          <!--<span class="size-12" translate>Add wallet</span>-->
+        <!--</div>-->
+        <!--<div translate>Create a new wallet</div>-->
+      <!--</a>-->
+    <!--</li>-->
+    <!-- 已配对设备 -->
     <li>
       <a ng-click="$root.go('correspondentDevices'); index.tab='chat'" class="oh">
         <i class="icon-arrow-right3 size-18 right m10t"></i>
@@ -36,6 +40,7 @@
         <div translate>Co-signers for multisig</div>
       </a>
     </li>
+    <!-- 设置 -->
     <li>
       <a ng-click="sidebar.closeMenu(); $root.go('preferencesGlobal')" class="oh">
         <i class="icon-arrow-right3 size-18 right m10t vm"></i>
