@@ -20,10 +20,10 @@ module.exports = function(grunt) {
         command: 'rm -Rf bower_components node_modules'
       },
       osx64: {
-        command: '../byteballbuilds/build-osx.sh osx64'
+        command: '../intervaluebuilds/build-osx.sh osx64'
       },
       osx32: {
-        command: '../byteballbuilds/build-osx.sh osx32'
+        command: '../intervaluebuilds/build-osx.sh osx32'
       }
     },
     watch: {
@@ -174,7 +174,7 @@ module.exports = function(grunt) {
         flatten: true,
         options: {timestamp: true, mode: true},
         src: ['webkitbuilds/build-osx.sh', 'webkitbuilds/Background.png'],
-        dest: '../byteballbuilds/'
+        dest: '../intervaluebuilds/'
       },
       linux: {
 		options: {timestamp: true, mode: true},
@@ -207,35 +207,35 @@ module.exports = function(grunt) {
           //platforms: ['win','osx64','linux'],
           //platforms: ['osx64'],
           platforms: [getPlatform()],
-          appName: 'Byteball-TN',
-          buildDir: '../byteballbuilds',
+          appName: 'intervalue',
+          buildDir: '../intervaluebuilds',
           version: '0.14.7',
           zip: false,
           macIcns: './public/img/icons/icon-white-outline.icns',
           winIco: './public/img/icons/icon-white-outline.ico',
           exeIco: './public/img/icons/icon-white-outline.ico',
-          macPlist: {CFBundleURLTypes: [{CFBundleURLName: 'Byteball action', CFBundleURLSchemes: ['byteball-tn']}], /*CFBundleIconFile: 'nw.icns',*/ LSHasLocalizedDisplayName: 0}
+          macPlist: {CFBundleURLTypes: [{CFBundleURLName: 'Intervalue action', CFBundleURLSchemes: ['Intervalue-tn']}], /*CFBundleIconFile: 'nw.icns',*/ LSHasLocalizedDisplayName: 0}
       },
       src: ['./package.json', './public/**/*', './angular-bitcore-wallet-client/**/*']
     },
     compress: {
       linux32: {
         options: {
-          archive: '../byteballbuilds/byteball-tn-linux32.zip'
+          archive: '../intervaluebuilds/intervalue-tn-linux32.zip'
         },
         expand: true,
-        cwd: '../byteballbuilds/Byteball-TN/linux32/',
+        cwd: '../intervaluebuilds/intervalue-TN/linux32/',
         src: ['**/*'],
-        dest: 'byteball-tn-linux32/'
+        dest: 'intervalue-tn-linux32/'
       },
       linux64: {
         options: {
-          archive: '../byteballbuilds/byteball-tn-linux64.zip'
+          archive: '../intervaluebuilds/intervalue-tn-linux64.zip'
         },
         expand: true,
-        cwd: '../byteballbuilds/Byteball-TN/linux64/',
+        cwd: '../intervaluebuilds/intervalue-TN/linux64/',
         src: ['**/*'],
-        dest: 'byteball-tn-linux64/'
+        dest: 'intervalue-tn-linux64/'
       }
     },
     browserify: {
@@ -258,13 +258,13 @@ module.exports = function(grunt) {
     debian_package: {
         linux64: {
             files: [
-                {expand: true, cwd: '../byteballbuilds/byteball-test/linux64/', src: ['**/*'], dest: '/opt/byteball-test/'},
+                {expand: true, cwd: '../intervaluebuilds/intervalue-test/linux64/', src: ['**/*'], dest: '/opt/intervalue-test/'},
                 //{expand: true, cwd: '../byteballbuilds/byteball-test/linux64', src: ['byteball.desktop'], dest: '/usr/share/applications/byteball-test.desktop'}
             ],
             options: {
                 maintainer: {
-                    name: 'Byteball',
-                    email: 'byteball@byteball.org'
+                    name: 'intervalue',
+                    email: 'intervalue@hashproject.net'
                 },
                 long_description: 'Smart payments made simple',
                 target_architecture: 'amd64'
