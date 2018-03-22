@@ -1,3 +1,0 @@
-files:
-  - source: /i18n/po/template.pot
-    translation: /i18n/po/%locale_with_underscore%.po
