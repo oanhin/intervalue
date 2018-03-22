@@ -1,13 +1,13 @@
 module.exports = function(grunt) {
-	
-	function getPlatform(){
-		switch(process.platform){
-			case 'win32': return 'win64'; // change to 'win' for both 32 and 64
-			case 'linux': return 'linux64';
-			case 'darwin': return 'osx64';
-			default: throw Error("unknown platform "+process.platform);
-		}
-	}
+  
+  function getPlatform(){
+    switch(process.platform){
+      case 'win32': return 'win64'; // change to 'win' for both 32 and 64
+      case 'linux': return 'linux64';
+      case 'darwin': return 'osx64';
+      default: throw Error("unknown platform "+process.platform);
+    }
+  }
 
   // Project Configuration
   grunt.initConfig({
@@ -117,7 +117,7 @@ module.exports = function(grunt) {
           'public/angular.js': ['public/angular.js']
         }
       },
-	  partialClient: {
+    partialClient: {
         files: {
           'public/partialClient.js': ['public/partialClient.js']
         }
@@ -140,19 +140,19 @@ module.exports = function(grunt) {
     nggettext_compile: {
       all: {
         options: {
-		  format: "json",
+      format: "json",
           module: 'copayApp'
         },
-		files: [
-			{
-				expand: true,
-				dot: true,
-				cwd: "i18n/po",
-				dest: "public/languages",
-				src: ["*.po"],
-				ext: ".json"
-			}
-		]
+    files: [
+      {
+        expand: true,
+        dot: true,
+        cwd: "i18n/po",
+        dest: "public/languages",
+        src: ["*.po"],
+        ext: ".json"
+      }
+    ]
       },
     },
     copy: {
@@ -174,13 +174,13 @@ module.exports = function(grunt) {
         flatten: true,
         options: {timestamp: true, mode: true},
         src: ['webkitbuilds/build-osx.sh', 'webkitbuilds/Background.png'],
-        dest: '../byteballbuilds/'
+        dest: '../intervaluebuilds/'
       },
       linux: {
-		options: {timestamp: true, mode: true},
+    options: {timestamp: true, mode: true},
         files: [
-          {expand: true, cwd: './webkitbuilds/', src: ['byteball.desktop', '../public/img/icons/icon-white-outline.ico', '../public/img/icons/icon-white-256.png'], dest: '../byteballbuilds/Byteball-TN/linux32/', flatten: true, filter: 'isFile', options: {timestamp: true, mode: true} },
-          {expand: true, cwd: './webkitbuilds/', src: ['byteball.desktop', '../public/img/icons/icon-white-outline.ico', '../public/img/icons/icon-white-256.png'], dest: '../byteballbuilds/Byteball-TN/linux64/', flatten: true, filter: 'isFile', options: {timestamp: true, mode: true} },
+          {expand: true, cwd: './webkitbuilds/', src: ['byteball.desktop', '../public/img/icons/icon-white-outline.ico', '../public/img/icons/icon-white-256.png'], dest: '../byteballbuilds/Byteball/linux32/', flatten: true, filter: 'isFile', options: {timestamp: true, mode: true} },
+          {expand: true, cwd: './webkitbuilds/', src: ['byteball.desktop', '../public/img/icons/icon-white-outline.ico', '../public/img/icons/icon-white-256.png'], dest: '../byteballbuilds/Byteball/linux64/', flatten: true, filter: 'isFile', options: {timestamp: true, mode: true} },
         ],
       }
     },
@@ -207,35 +207,35 @@ module.exports = function(grunt) {
           //platforms: ['win','osx64','linux'],
           //platforms: ['osx64'],
           platforms: [getPlatform()],
-          appName: 'Byteball-TN',
-          buildDir: '../byteballbuilds',
+          appName: 'Intervalue',
+          buildDir: '../intervaluebuilds',
           version: '0.14.7',
           zip: false,
           macIcns: './public/img/icons/icon-white-outline.icns',
           winIco: './public/img/icons/icon-white-outline.ico',
           exeIco: './public/img/icons/icon-white-outline.ico',
-          macPlist: {CFBundleURLTypes: [{CFBundleURLName: 'Byteball action', CFBundleURLSchemes: ['byteball-tn']}], /*CFBundleIconFile: 'nw.icns',*/ LSHasLocalizedDisplayName: 0}
+          macPlist: {CFBundleURLTypes: [{CFBundleURLName: 'Byteball action', CFBundleURLSchemes: ['byteball']}], /*CFBundleIconFile: 'nw.icns',*/ LSHasLocalizedDisplayName: 0}
       },
       src: ['./package.json', './public/**/*', './angular-bitcore-wallet-client/**/*']
     },
     compress: {
       linux32: {
         options: {
-          archive: '../byteballbuilds/byteball-tn-linux32.zip'
+          archive: '../intervaluebuilds/intervalue-linux32.zip'
         },
         expand: true,
-        cwd: '../byteballbuilds/Byteball-TN/linux32/',
+        cwd: '../intervaluebuilds/intervalue/linux32/',
         src: ['**/*'],
-        dest: 'byteball-tn-linux32/'
+        dest: 'intervalue-linux32/'
       },
       linux64: {
         options: {
-          archive: '../byteballbuilds/byteball-tn-linux64.zip'
+          archive: '../intervaluebuilds/Intervalue-linux64.zip'
         },
         expand: true,
-        cwd: '../byteballbuilds/Byteball-TN/linux64/',
+        cwd: '../intervaluebuilds/Intervalue/linux64/',
         src: ['**/*'],
-        dest: 'byteball-tn-linux64/'
+        dest: 'Intervalue-linux64/'
       }
     },
     browserify: {
@@ -246,25 +246,25 @@ module.exports = function(grunt) {
             src: 'public/byteball.js',
             dest: 'public/byteball.js'
         },
-	    partialClient:{
-		    options:{
-			    exclude: ['sqlite3', 'nw.gui', 'mysql', 'ws', 'regedit']
-		    },
-		    src: 'src/js/partialClient.js',
-		    dest: 'public/partialClient.js'
+      partialClient:{
+        options:{
+          exclude: ['sqlite3', 'nw.gui', 'mysql', 'ws', 'regedit']
+        },
+        src: 'src/js/partialClient.js',
+        dest: 'public/partialClient.js'
         }
     },
     // .deb proved to be very slow to produce and install: lintian spends a lot of time verifying a .bin file
     debian_package: {
         linux64: {
             files: [
-                {expand: true, cwd: '../byteballbuilds/byteball-test/linux64/', src: ['**/*'], dest: '/opt/byteball-test/'},
+                {expand: true, cwd: '../intervaluebuilds/intervalue-test/linux64/', src: ['**/*'], dest: '/opt/intervalue-test/'},
                 //{expand: true, cwd: '../byteballbuilds/byteball-test/linux64', src: ['byteball.desktop'], dest: '/usr/share/applications/byteball-test.desktop'}
             ],
             options: {
                 maintainer: {
-                    name: 'Byteball',
-                    email: 'byteball@byteball.org'
+                    name: 'Intervalue',
+                    email: 'intervalue@hashproject.net'
                 },
                 long_description: 'Smart payments made simple',
                 target_architecture: 'amd64'

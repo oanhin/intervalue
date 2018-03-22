@@ -2456,19 +2456,19 @@ angular.module('copayApp.services').factory('configService', function(storageSer
   
   function checkAndReplaceOldUnitCode(setting) {
 	  switch (setting.unitCode){
-		  case 'byte':
+		  case 'inve':
 				setting.unitCode = 'one';
 				setting.unitValue = 1;
 		  	break;
-		  case 'kB':
+		  case 'ki':
 				setting.unitCode = 'kilo';
 				setting.unitValue = 1000;
 		  	break;
-		  case 'MB':
+		  case 'Mi':
 				setting.unitCode = 'mega';
 				setting.unitValue = 1000000;
 		  	break;
-		  case 'GB':
+		  case 'Gi':
 				setting.unitCode = 'giga';
 				setting.unitValue = 1000000000;
 		  	break;
@@ -10793,29 +10793,29 @@ angular.module('copayApp.controllers').controller('preferencesBbUnitController',
         code: 'btc',
       }
       , */{
-        name: 'blackbytes',
-        shortName: 'blackbytes',
+        name: 'inve',
+        shortName: 'inve',
         value: 1,
         decimals: 0,
         code: 'one'
       }
       , {
-        name: 'kBlackBytes (1,000 blackbytes)',
-        shortName: 'kBB',
+        name: 'kInves (1,000 Inves)',
+        shortName: 'ki',
         value: 1000,
         decimals: 3,
         code: 'kilo'
       }
       , {
-        name: 'MBlackBytes (1,000,000 blackbytes)',
-        shortName: 'MBB',
+        name: 'MInves (1,000,000 Inves)',
+        shortName: 'Mi',
         value: 1000000,
         decimals: 6,
         code: 'mega'
       }
       , {
-        name: 'GBlackBytes (1,000,000,000 blackbytes)',
-        shortName: 'GBB',
+        name: 'GInves (1,000,000,000 Inves)',
+        shortName: 'Gi',
         value: 1000000000,
         decimals: 9,
         code: 'giga'
@@ -11498,22 +11498,22 @@ angular.module('copayApp.controllers').controller('preferencesUnitController',
         code: 'one',
       }
       , {
-        name: 'kinve (1,000 inve)',
-        shortName: 'kB',
+        name: 'kInves (1,000 inve)',
+        shortName: 'ki',
         value: 1000,
         decimals: 3,
         code: 'kilo',
       }
       , {
-        name: 'Minve (1,000,000 inve)',
-        shortName: 'MB',
+        name: 'MInves (1,000,000 inve)',
+        shortName: 'Mi',
         value: 1000000,
         decimals: 6,
         code: 'mega',
       }
       , {
-        name: 'Ginve (1,000,000,000 inve)',
-        shortName: 'GB',
+        name: 'GInves (1,000,000,000 inve)',
+        shortName: 'Gi',
         value: 1000000000,
         decimals: 9,
         code: 'giga',
@@ -13868,7 +13868,7 @@ angular.module('copayApp.controllers')
 		}
 	});
 window.version="2.1.0t";
-window.commitHash="1c94da8";
+window.commitHash="9dc7272";
 'use strict';
 
 angular.element(document).ready(function() {

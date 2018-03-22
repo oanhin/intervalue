@@ -43,22 +43,22 @@ angular.module('copayApp.controllers').controller('preferencesUnitController',
         code: 'one',
       }
       , {
-        name: 'kinve (1,000 inve)',
-        shortName: 'kB',
+        name: 'kInves (1,000 inve)',
+        shortName: 'ki',
         value: 1000,
         decimals: 3,
         code: 'kilo',
       }
       , {
-        name: 'Minve (1,000,000 inve)',
-        shortName: 'MB',
+        name: 'MInves (1,000,000 inve)',
+        shortName: 'Mi',
         value: 1000000,
         decimals: 6,
         code: 'mega',
       }
       , {
-        name: 'Ginve (1,000,000,000 inve)',
-        shortName: 'GB',
+        name: 'GInves (1,000,000,000 inve)',
+        shortName: 'Gi',
         value: 1000000000,
         decimals: 9,
         code: 'giga',

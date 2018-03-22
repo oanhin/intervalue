@@ -211,19 +211,19 @@ angular.module('copayApp.services').factory('configService', function(storageSer
   
   function checkAndReplaceOldUnitCode(setting) {
 	  switch (setting.unitCode){
-		  case 'byte':
+		  case 'inve':
 				setting.unitCode = 'one';
 				setting.unitValue = 1;
 		  	break;
-		  case 'kB':
+		  case 'ki':
 				setting.unitCode = 'kilo';
 				setting.unitValue = 1000;
 		  	break;
-		  case 'MB':
+		  case 'Mi':
 				setting.unitCode = 'mega';
 				setting.unitValue = 1000000;
 		  	break;
-		  case 'GB':
+		  case 'Gi':
 				setting.unitCode = 'giga';
 				setting.unitValue = 1000000000;
 		  	break;

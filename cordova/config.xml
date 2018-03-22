@@ -3,12 +3,12 @@
   version="2.1.0"
   android-versionCode="1062"
   ios-CFBundleVersion="2.1.0">
-    <name>Byteball TN</name>
+    <name>Intervalue</name>
     <description>
-      Byteball wallet for testnet.
+      Intervalue wallet for testnet.
     </description>
     <author email="byteball@byteball.org" href="https://byteball.org">
-        Byteball
+        Intervalue
     </author>
     <content src="index.html" />
     <access origin="*" />
