@@ -126,7 +126,7 @@ angular.module('copayApp.services').factory('configService', function (storageSe
             configCache = migrateLocalConfig(localConfig);
             $log.debug('Preferences read:', configCache);
             return cb(err, configCache);
-        });//��Ԫ����
+        });
     };
 
     root.set = function (newOpts, cb) {
@@ -195,7 +195,7 @@ angular.module('copayApp.services').factory('configService', function (storageSe
             if (!_config.wallet.settings.bbUnitCode) {
                 _config.wallet.settings.bbUnitCode = defaultConfig.wallet.settings.bbUnitCode;
             }
-            if (!_config.pushNotifications) {//��Ԫ����
+            if (!_config.pushNotifications) {
                 _config.pushNotifications = defaultConfig.pushNotifications;
             }
             if (!_config.hub)

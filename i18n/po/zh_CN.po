@@ -29,24 +29,18 @@ msgstr "-- 选择多重签名账户 --"
 msgid "About INVE"
 msgstr "关于INVE"
 
-msgid "Wallet"
-msgstr "钱包"
-
-msgid "InterValue Wallet"
-msgstr "InterValue 钱包"
-
 #: public/views/correspondentDevices.html:45
 msgid "DApp store"
 msgstr "DApp商店"
 
-#: public/views/inviteCorrespondentDevice.html
+#: public/views/inviteCorrespondentDevice.html:4
 msgid "Invite new device"
 msgstr "邀请新设备"
 
 #: src/js/controllers/walletHome.js:501
 #: src/js/controllers/walletHome.js:508
 #: src/js/controllers/walletHome.js:512
-#: public/views/modals/destination-address.html:130
+#: public/views/modals/destination-address.html:132
 msgid "Wallet address"
 msgstr "钱包地址"
 
@@ -126,8 +120,8 @@ msgid "All Wallet Addresses"
 msgstr "所有钱包地址"
 
 #: public/views/translators.html:52
-msgid "All contributions to InterValue's translation are welcome. Sign up at crowdin.com and join the Byteball project at"
-msgstr "欢迎为Intervalue的翻译添砖加瓦，注册crowdin.com并参与Byteball项目"
+msgid "All contributions to InterValue's translation are welcome. Sign up at crowdin.com and join the InterValue project at"
+msgstr "欢迎为Intervalue的翻译添砖加瓦，注册crowdin.com并参与InterValue项目"
 
 #: public/views/modals/multi-payment.html:56
 msgid "Already Paid"
@@ -146,11 +140,12 @@ msgid "Also, don't forget to delete your seed"
 msgstr "此外，不要忘记删除你的口令私钥"
 
 #: public/views/includes/output.html:6
-#: public/views/modals/customized-amount.html:38
-#: public/views/modals/customized-amount.html:59
-#: public/views/modals/customized-amount.html:62
+#: public/views/modals/customized-amount.html:45
+#: public/views/modals/customized-amount.html:68
+#: public/views/modals/customized-amount.html:71
 #: public/views/paymentUri.html:16
-#: public/views/walletHome.html:381
+#: public/views/walletHome.html:420
+#: public/views/walletHome.html:431
 msgid "Amount"
 msgstr "金额"
 
@@ -1306,8 +1301,9 @@ msgstr "TOR匿名"
 msgid "Tap to retry"
 msgstr "点击重试"
 
+#: public/views/disclaimer.html:6
 #: public/views/disclaimer.html:12
-#: public/views/preferencesAbout.html:30
+#: public/views/preferencesAbout.html:34
 msgid "Terms of Use"
 msgstr "使用条款"
 
@@ -1782,39 +1778,51 @@ msgstr "{{item.n}}-的-{{item.m}}"
 msgid "{{prefGlobal.torEnabled?'On':'Off'}}"
 msgstr "{{prefGlobal.torEnabled?'On':'Off'}}"
 
-#:
+
+#: public/views/disclaimer.html: 17
 msgid "The software you are about to use functions as a free and open source digital wallet."
 msgstr "您即将使用的是一款免费开源的数字钱包软件。"
 
+#: public/views/disclaimer.html: 18
 msgid "The software does not constitute an account where the developer of this software or other third parties serve as financial intermediaries or custodians of your INVE or other valuables."
 msgstr "本软件不会开设账户，以使软件开发者或其他第三方机构成为您的INVE或其它有价资产的金融中介或保管者。"
 
+#: public/views/disclaimer.html: 19
 msgid "While the software has undergone beta testing and continues to be improved by feedback from the open-source user and developer community, we cannot guarantee that there will be no bugs in the software."
 msgstr "鉴于本软件已完成公开测试并会根据开源用户和开发者社区的反馈进行持续改进，我们不保证本软件不存在缺陷。"
 
+#: public/views/disclaimer.html: 20
 msgid "You acknowledge that your use of this software is at your own discretion and in compliance with all applicable laws."
 msgstr "请您确定使用本软件是您自己的决定并遵守所有适用的法律。"
 
+#: public/views/disclaimer.html: 21
 msgid "You are responsible for safekeeping your passwords, private key pairs, PINs and any other codes you use to access the software."
 msgstr "您有责任妥善保管您的口令、私钥、交易密码和您用以访问本软件的其他密码。"
 
+#: public/views/disclaimer.html: 22
 msgid "<b>If YOU LOSE ACCESS TO YOUR INTERVALUE WALLET, YOU ACKNOWLEDGE AND AGREE THAT ANY INVE OR OTHER VALUABLES YOU HAVE ASSOCIATED WITH THAT INTERVALUE WALLET WILL BECOME INACCESSIBLE.</b>"
 msgstr "<b>若您失去对本钱包的控制权，您知悉并接受任何与本钱包关联的INVE和其它有价资产将无法找回。</b>"
 
+#: public/views/disclaimer.html: 23
 msgid "All transaction requests are irreversible."
 msgstr "所有交易请求都是不可逆的。"
 
+#: public/views/disclaimer.html: 24
 msgid "The authors of the software cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction comfirmation as they do not have control over the InterValue network."
 msgstr "软件作者无法帮您恢复丢失或忘记的私钥或密码，也不能保证交易会被确认，因为他们并没有InterValue网络的控制权。"
 
-msgid " fullest extent permitted by law, this software is provided \"as is\" and no representations or warranties can be made of any kind, express or implied, including but not limited to the warranties of merchantability, fitness or a particular purpose and noninfringement."
+#: public/views/disclaimer.html: 25
+msgid "To the fullest extent permitted by law, this software is provided \"as is\" and no representations or warranties can be made of any kind, express or implied, including but not limited to the warranties of merchantability, fitness or a particular purpose and noninfringement."
 msgstr "在法律允许的最大范围内，本软件会以当前形式提供，不存在一切其他明示或默示保证，包括（但不限于）关于适销性、合理性或某一特定用途以及非侵权的默示保证。"
 
+#: public/views/disclaimer.html: 26
 msgid "You assume any and all risks associated with the use of the software."
 msgstr "您自愿承担与使用本软件相关的所有风险和其它后果"
 
+#: public/views/disclaimer.html: 27
 msgid "In no event In no event shall the authors of the software be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
 msgstr "任何情况下，本软件的作者不对任何合同诉讼、侵权行为或其它与本软件无关或相关内容产生的任何索赔、损伤或其它责任负责。"
 
+#: public/views/disclaimer.html: 28
 msgid "We reserve the right to modify this disclaimer from time to time."
 msgstr "我们保留更新此申明的权利。"

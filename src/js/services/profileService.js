@@ -33,11 +33,11 @@ angular.module('copayApp.services')
             else
                 return amount;
         };
-        //��ʽ������������Ԫ���ƣ�
+        //
         root.formatAmountWithUnit = function (amount, asset, opts) {
             return root.formatAmount(amount, asset, opts) + ' ' + root.getUnitName(asset);
         };
-        //��ʽ������������Ԫ���ƣ�shortname��
+        //
         root.formatAmountWithUnitIfShort = function (amount, asset, opts) {
             var str = root.formatAmount(amount, asset, opts);
             var unit = root.getUnitName(asset);
@@ -46,13 +46,13 @@ angular.module('copayApp.services')
             return str;
         };
 
-        // ��ȡ��Ԫ����
+        //
         root.getUnitName = function (asset) {
             var config = configService.getSync().wallet.settings;
             if (asset === 'blackbytes' || asset === constants.BLACKBYTES_ASSET)
                 return config.bbUnitName;
             else if (asset === 'base' || asset === 'bytes')
-                return config.unitName;
+                return config.unitName.toUpperCase();
             else if (root.assetMetadata[asset])
                 return root.assetMetadata[asset].name;
             else

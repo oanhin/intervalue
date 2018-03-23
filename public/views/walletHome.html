@@ -132,7 +132,10 @@
                                 ng-show="!index.updateError && index.walletScanStatus != 'error'"
                                 ng-repeat="balance in index.arrBalances|filter:'base'"> <!-- 过滤base页 -->
                                 <div ng-click='index.updateAll(); index.updateHistoryFromNetwork()'>
-                                    <strong class="size-36" ng-if="balance.totalStr && balance.totalStr.length <= 16">{{balance.totalStr}}</strong>
+                                    <!-- banner显示金额信息 -->
+                                    <strong class="size-36" ng-if="balance.totalStr && balance.totalStr.length <= 16">
+                                        {{balance.totalStr|uppercase}}
+                                    </strong>
                                     <div ng-if="balance.totalStr && balance.totalStr.length > 16">
                                         <div><strong class="size-36">{{balance.totalStrWithoutUnit}}</strong></div>
                                         <div class="of-asset-name">{{balance.name}}</div>
@@ -430,21 +433,21 @@
                                                name="amount"
                                                ng-attr-placeholder="{{(home.bSendAll ? (index.arrBalances[index.assetIndex].asset === 'base' ? 'All minus fees' : 'All') : 'Amount')|translate}}"
                                                ng-minlength="0.00000001" ng-maxlength="10000000000" ng-model="_amount"
-                                               valid-amount="{{index.arrBalances[index.assetIndex].asset}}"
+                                               valid-amount="{{index.arrBalances[index.assetIndex].asset|uppercase}}"
                                                ng-required="!home.bSendAll && !home.send_multiple" autocomplete="off"
                                                ng-focus="home.formFocus('amount')" ng-blur="home.formFocus(false)">
                                         <a class="postfix"
-                                           ng-if="index.arrBalances.length > 0 && index.arrBalances[index.assetIndex].asset === 'base'">{{home.unitName}}</a>
+                                           ng-if="index.arrBalances.length > 0 && index.arrBalances[index.assetIndex].asset === 'base'">{{home.unitName|uppercase}}</a>
 
                                         <a class="postfix"
-                                           ng-if="index.arrBalances.length > 0 && index.arrBalances[index.assetIndex].asset === index.BLACKBYTES_ASSET">{{home.bbUnitName}}</a>
+                                           ng-if="index.arrBalances.length > 0 && index.arrBalances[index.assetIndex].asset === index.BLACKBYTES_ASSET">{{home.bbUnitName|uppercase}}</a>
                                         <a class="postfix"
                                            ng-if="index.arrBalances.length > 0 && index.arrBalances[index.assetIndex].name">{{index.arrBalances[index.assetIndex].name
-                                            | limitTo:16}}{{index.arrBalances[index.assetIndex].name.length>16 ? '...' :
-                                            ''}}</a>
+                                            | limitTo:16|uppercase}}{{index.arrBalances[index.assetIndex].name.length>16 ? '...' :
+                                            ''|uppercase}}</a>
                                         <a class="postfix"
                                            ng-if="index.arrBalances.length > 0 && index.arrBalances[index.assetIndex].asset !== 'base' && index.arrBalances[index.assetIndex].asset !== index.BLACKBYTES_ASSET && !index.arrBalances[index.assetIndex].name">of
-                                            {{index.arrBalances[index.assetIndex].asset.substr(0,4)}}</a>
+                                            {{index.arrBalances[index.assetIndex].asset.substr(0,4)|uppercase}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -498,14 +501,14 @@
                                     <input ng-if="!home.send_multiple && !index.arrBalances[index.assetIndex].is_private"
                                            class="m0" type="text" id="address" name="address"
                                            ng-disabled="home.blockUx || home.lockAddress || !home.canSendExternalPayment()"
-                                           ng-attr-placeholder="{{home.canSendExternalPayment() ? 'Wallet address' : 'Wallet address of your other wallet &#8594;'}}"
+                                           ng-attr-placeholder="{{home.canSendExternalPayment() ? 'Wallet address' : 'Wallet address of your other wallet &#8594;'|translate}}"
                                            ng-model="_address" ng-required valid-address-or-email
                                            ng-focus="home.formFocus('address')" ng-blur="home.formFocus(false)">
 
                                     <input ng-if="!home.send_multiple && index.arrBalances[index.assetIndex].is_private"
                                            class="m0" type="text" id="address" name="address"
                                            ng-disabled="home.blockUx || home.lockAddress || !home.canSendExternalPayment()"
-                                           ng-attr-placeholder="{{home.canSendExternalPayment() ? 'Wallet address' : 'Wallet address of your other wallet &#8594;'}}"
+                                           ng-attr-placeholder="{{home.canSendExternalPayment() ? 'Wallet address' : 'Wallet address of your other wallet &#8594;'|translate}}"
                                            ng-model="_address" ng-required valid-address
                                            ng-focus="home.formFocus('address')" ng-blur="home.formFocus(false)">
                                     <textarea ng-if="home.send_multiple" class="m0" type="text" name="addresses"
