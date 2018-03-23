@@ -9,51 +9,57 @@
   <link rel="stylesheet" type="text/css" href="css/foundation.css">
   <link rel="stylesheet" type="text/css" href="icons/foundation-icons.css">
   <link rel="stylesheet" type="text/css" href="css/byteball.css">
-  <title>Intervalue &mdash; smart payments</title>
+  <title>InterValue &mdash; smart payments</title>
   <link rel="shortcut icon" href="img/icons/favicon-white.ico">
 </head>
 <body ng-cloak class="ng-cloak">
 
-  <div class="page" 
-    ng-controller="indexController as index" 
-    ng-swipe-disable-mouse 
-    ng-swipe-left="index.closeMenu()"
-    ng-swipe-right="index.swipeRight()">
+<div class="page"
+     ng-controller="indexController as index"
+     ng-swipe-disable-mouse
+     ng-swipe-left="index.closeMenu()"
+     ng-swipe-right="index.swipeRight()">
 
     <div class="off-canvas-wrap" id="off-canvas-wrap">
-      <div class="inner-wrap">
-        <div ng-include="'views/includes/sidebar.html'" ng-if="index.hasProfile"></div>
+        <div class="inner-wrap">
+            <!-- 侧边栏 -->
+            <div ng-include="'views/includes/sidebar.html'" ng-if="index.hasProfile"></div>
 
-        <div notifications="right top"></div> 
-        <div ng-include="'views/includes/password.html'" ng-if="index.askPassword"></div>
-        <div ng-include="'views/includes/alert.html'" ng-if="index.showAlert"></div>
-        <div ng-include="'views/includes/upgrading_db.html'" ng-if="index.bUpgradingDb"></div>
-        <div id="sectionContainer">
-          <div id="mainSection">
-            <section ui-view="main"
-              ng-class="{
-                'main': index.hasProfile
-              }" ng-show="!index.$state.includes('correspondentDevices')"></section>
-            <div ui-view="chat" ng-show="index.$state.includes('correspondentDevices')" class="main" style="overflow: auto;"></div>
-          </div>
+            <div notifications="right top"></div>
+            <div ng-include="'views/includes/password.html'" ng-if="index.askPassword"></div>
+            <div ng-include="'views/includes/alert.html'" ng-if="index.showAlert"></div>
+            <div ng-include="'views/includes/upgrading_db.html'" ng-if="index.bUpgradingDb"></div>
+            <!-- 主区 -->
+            <div id="sectionContainer">
+                <div id="mainSection">
+                    <!-- 首页、接收、发送、历史记录标签及视图 -->
+                    <section ui-view="main"
+                             ng-class="{
+                                'main': index.hasProfile
+                             }" ng-show="!index.$state.includes('correspondentDevices')"></section>
+                    <!-- chat标签及视图 -->
+                    <div ui-view="chat" ng-show="index.$state.includes('correspondentDevices')" class="main"
+                         style="overflow: auto;"></div>
+                </div>
+            </div>
+            <!-- 关闭 -->
+            <a class="close-menu" ng-click="index.closeMenu()"></a>
+
         </div>
-        <a class="close-menu" ng-click="index.closeMenu()"></a>
-
-      </div>
     </div>
-  </div>
+</div>
 
-  <!-- DO NOT DELETE THIS COMMET  -->
-  <!-- PLACEHOLDER: PARTIAL CLIENT HTML -->
-  
-  <script>console.log("starting scripts...");</script>
-  <script src="angular.js"></script>
+<!-- DO NOT DELETE THIS COMMET  -->
+<!-- PLACEHOLDER: PARTIAL CLIENT HTML -->
 
-  <!-- DO NOT DELETE THIS COMMET  -->
-  <!-- PLACEHOLDER: CORDOVA SRIPT -->
+<script>console.log("starting scripts...");</script>
+<script src="angular.js"></script>
 
-  <script src="byteball.js"></script>
-  <script>console.log("done scripts");</script>
+<!-- DO NOT DELETE THIS COMMET  -->
+<!-- PLACEHOLDER: CORDOVA SRIPT -->
+
+<script src="byteball.js"></script>
+<script>console.log("done scripts");</script>
 
 </body>
 </html>

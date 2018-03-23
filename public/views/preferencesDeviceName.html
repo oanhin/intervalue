@@ -1,19 +1,21 @@
 <div
-  class="topbar-container"
-  ng-include="'views/includes/topbar.html'"
-  ng-init="titleSection='Device name'; goBackToState = true">
+        class="topbar-container"
+        ng-include="'views/includes/topbar.html'"
+        ng-init="titleSection='Device name'; goBackToState = true">
 </div>
 
+<!-- 设备名视图 -->
 <div class="content preferences" ng-controller="preferencesDeviceNameController as prefDeviceName">
-
-
-  <h4></h4>
-  <form name="settingsDeviceNameForm" ng-submit="prefDeviceName.save()" class="columns">
-    <label><span translate>Device name</span></label>
-    <input type="text" id="deviceName" type="text" name="deviceName" ng-model="prefDeviceName.deviceName">
-    <input type="submit" class="button expand black round" value="{{'Save'|translate}}" ng-style="{'background-color':index.backgroundColor}">
-  </form>
+    <h4></h4>
+    <!-- 提交表单 -->
+    <form name="settingsDeviceNameForm" ng-submit="prefDeviceName.save()" class="columns">
+        <label><span translate>Device name</span></label>
+        <input type="text" id="deviceName" type="text" name="deviceName" ng-model="prefDeviceName.deviceName">
+        <input type="submit" class="button expand black round" value="{{'Save'|translate}}"
+               ng-style="{'background-color':index.backgroundColor}">
+    </form>
+    <!-- 显示信息 -->
     <div class="text-gray size-12 text-center" translate>Device name is visible to other devices you communicate with.
-  </div>
+    </div>
 </div>
 <div class="extra-margin-bottom"></div>
