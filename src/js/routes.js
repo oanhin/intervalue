@@ -1,7 +1,7 @@
 'use strict';
 
 var unsupported, isaosp;
-var breadcrumbs = require('byteballcore/breadcrumbs.js');
+var breadcrumbs = require('intervaluecore/breadcrumbs.js');
 
 if (window && window.navigator) {
   var rxaosp = window.navigator.userAgent.match(/Android.*AppleWebKit\/([\d.]+)/);
@@ -537,7 +537,7 @@ angular
         type: "menubar"
       });
       try {
-        nativeMenuBar.createMacBuiltin("Byteball");
+        nativeMenuBar.createMacBuiltin("InterValue");
       } catch (e) {
         $log.debug('This is not OSX');
       }

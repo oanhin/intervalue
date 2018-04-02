@@ -26,30 +26,30 @@ wp8-debug:
 
 ios-prod:
 	cordova/build.sh IOS --clear
-	cd ../byteballbuilds/project-IOS-tn && cordova build ios
-#	open ../byteballbuilds/project-IOS-tn/platforms/ios/Byteball.xcodeproj
+	cd ../intervaluebuilds/project-IOS-tn && cordova build ios
+#	open ../intervaluebuilds/project-IOS-tn/platforms/ios/InterValue.xcodeproj
 
 ios-debug:
 	cordova/build.sh IOS --dbgjs
-	cd ../byteballbuilds/project-IOS-tn && cordova build ios
-	open ../byteballbuilds/project-IOS-tn/platforms/ios/Byteball.xcodeproj
+	cd ../intervaluebuilds/project-IOS-tn && cordova build ios
+	open ../intervaluebuilds/project-IOS-tn/platforms/ios/InterValue.xcodeproj
 
 android-prod:
 	cordova/build.sh ANDROID --clear
 #	cp ./etc/beep.ogg ./cordova/project/plugins/phonegap-plugin-barcodescanner/src/android/LibraryProject/res/raw/beep.ogg
-	cd ../byteballbuilds/project-ANDROID-tn && cordova run android --device
+	cd ../intervaluebuilds/project-ANDROID-tn && cordova run android --device
 	
 android-prod-fast:
 	cordova/build.sh ANDROID
-	cd ../byteballbuilds/project-ANDROID-tn && cordova run android --device
+	cd ../intervaluebuilds/project-ANDROID-tn && cordova run android --device
 
 android-debug:
 	cordova/build.sh ANDROID --dbgjs --clear
 #	cp ./etc/beep.ogg ./cordova/project/plugins/phonegap-plugin-barcodescanner/src/android/LibraryProject/res/raw/beep.ogg
-	cd ../byteballbuilds/project-ANDROID-tn && cordova run android --device
+	cd ../intervaluebuilds/project-ANDROID-tn && cordova run android --device
 
 android-debug-fast:
 	cordova/build.sh ANDROID --dbgjs
 #	cp ./etc/beep.ogg ./cordova/project/plugins/phonegap-plugin-barcodescanner/src/android/LibraryProject/res/raw/beep.ogg
-	cd ../byteballbuilds/project-ANDROID-tn && cordova run android --device
-#	cd ../byteballbuilds/project-ANDROID-tn && cordova build android
+	cd ../intervaluebuilds/project-ANDROID-tn && cordova run android --device
+#	cd ../intervaluebuilds/project-ANDROID-tn && cordova build android

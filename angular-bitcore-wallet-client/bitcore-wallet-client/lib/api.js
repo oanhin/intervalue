@@ -2,16 +2,16 @@
 'use strict';
 
 if (process.browser){
-	var conf = require('byteballcore/conf.js');
+	var conf = require('intervaluecore/conf.js');
 	var appPackageJson = require('../../../package.json');
 	conf.program = appPackageJson.name;
 	conf.program_version = appPackageJson.version;
 }
 
 var walletDefinedByKeys;
-var ecdsaSig = require('byteballcore/signature.js');
-var breadcrumbs = require('byteballcore/breadcrumbs.js');
-var constants = require('byteballcore/constants.js');
+var ecdsaSig = require('intervaluecore/signature.js');
+var breadcrumbs = require('intervaluecore/breadcrumbs.js');
+var constants = require('intervaluecore/constants.js');
 
 var _ = require('lodash');
 var $ = require('preconditions').singleton();
@@ -39,7 +39,7 @@ function API(opts) {
 	opts = opts || {};
 	this.verbose = !!opts.verbose;
 	this.timeout = opts.timeout || 50000;
-	walletDefinedByKeys = require('byteballcore/wallet_defined_by_keys.js');
+	walletDefinedByKeys = require('intervaluecore/wallet_defined_by_keys.js');
 
 	if (this.verbose)
 		log.setLevel('debug');
@@ -521,7 +521,7 @@ API.prototype.sendPayment = function(asset, to_address, amount, arrSigningDevice
 API.prototype.sendMultiPayment = function(opts, cb) {
     var self = this;
     var coin = (this.credentials.network == 'livenet' ? "0" : "1");
-	var Wallet = require('byteballcore/wallet.js');
+	var Wallet = require('intervaluecore/wallet.js');
     
     opts.signWithLocalPrivateKey = function(wallet_id, account, is_change, address_index, text_to_sign, handleSig){
         var path = "m/44'/" + coin + "'/" + account + "'/"+is_change+"/"+address_index;
@@ -580,7 +580,7 @@ API.prototype.getAddresses = function(opts, cb) {
  * @param {Callback} cb
  */
 API.prototype.getBalance = function(shared_address, cb) {
-	var Wallet = require('byteballcore/wallet.js');
+	var Wallet = require('intervaluecore/wallet.js');
 	$.checkState(this.credentials && this.credentials.isComplete());
 	var walletId = this.credentials.walletId;
 	Wallet.readBalance(shared_address || walletId, function(assocBalances){
@@ -620,7 +620,7 @@ API.prototype.getBalance = function(shared_address, cb) {
 };
 
 API.prototype.getListOfBalancesOnAddresses = function(cb) {
-	var Wallet = require('byteballcore/wallet.js');
+	var Wallet = require('intervaluecore/wallet.js');
 	$.checkState(this.credentials && this.credentials.isComplete());
 	var walletId = this.credentials.walletId;
 	Wallet.readBalancesOnAddresses(walletId, function(assocBalances) {
@@ -629,7 +629,7 @@ API.prototype.getListOfBalancesOnAddresses = function(cb) {
 };
 
 API.prototype.getTxHistory = function(asset, shared_address, cb) {
-	var Wallet = require('byteballcore/wallet.js');
+	var Wallet = require('intervaluecore/wallet.js');
 	$.checkState(this.credentials && this.credentials.isComplete());
 	var opts = {asset: asset};
 	if (shared_address)
@@ -643,8 +643,8 @@ API.prototype.getTxHistory = function(asset, shared_address, cb) {
 
 API.prototype.initDeviceProperties = function(xPrivKey, device_address, hub, deviceName) {
     console.log("initDeviceProperties");
-    var device = require('byteballcore/device.js');
-    var lightWallet = require('byteballcore/light_wallet.js');
+    var device = require('intervaluecore/device.js');
+    var lightWallet = require('intervaluecore/light_wallet.js');
     if (device_address)
         device.setDeviceAddress(device_address);
     device.setDeviceName(deviceName);

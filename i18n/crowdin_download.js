@@ -24,7 +24,7 @@ var path = require('path');
 var https = require('https');
 var AdmZip = require('adm-zip');
 
-var crowdin_identifier = 'byteball'
+var crowdin_identifier = 'intervalue'
 
 var local_file_name2 = path.join(__dirname, 'docs/appstore_en.txt')
 var local_file_name3 = path.join(__dirname, 'docs/updateinfo_en.txt')

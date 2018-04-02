@@ -19,7 +19,7 @@ angular.module('copayApp.services').factory('configService', function (storageSe
         '#7A8C9E',      //灰色
     ];
 
-    var constants = require('byteballcore/constants.js');
+    var constants = require('intervaluecore/constants.js');
     var isTestnet = constants.version.match(/t$/);
     //
     root.TIMESTAMPER_ADDRESS = isTestnet ? 'OPNUXBRSSQQGHKQNEPD2GLWQYEUY5XLD' : 'I2ADHGP4HL6J37NQAD73J7E5SKFIXJOT';
@@ -59,7 +59,7 @@ angular.module('copayApp.services').factory('configService', function (storageSe
             totalCosigners: 6
         },
 
-        hub: (constants.alt === '2' && isTestnet) ? 'byteball.org/bb-test' : 'byteball.org/bb',
+        hub: (constants.alt === '2' && isTestnet) ? 'inve07.hashproject.net/bb-test' : 'inve07.hashproject.net/bb',
 
         // requires bluetooth permission on android
         //deviceName: /*isCordova ? cordova.plugins.deviceName.name : */require('os').hostname(),

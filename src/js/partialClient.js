@@ -1,5 +1,5 @@
-var BLACKBYTES_ASSET = require('byteballcore/constants').BLACKBYTES_ASSET;
-var balances = require('byteballcore/balances');
+var BLACKBYTES_ASSET = require('intervaluecore/constants').BLACKBYTES_ASSET;
+var balances = require('intervaluecore/balances');
 var utils = require('../../angular-bitcore-wallet-client/bitcore-wallet-client/lib/common/utils');
 var fileSystem = require('./fileStorage');
 var completeClientLoaded = false;
@@ -137,7 +137,7 @@ function initWallet() {
 	}
 
 	function loadCompleteClient(showClient) {
-		self._bByteballCoreLoaded = false; //"fix" : Looks like you are loading multiple copies of byteball core, which is not supported. Running 'npm dedupe' might help.
+		self._bintervaluecoreLoaded = false; //"fix" : Looks like you are loading multiple copies of intervalue core, which is not supported. Running 'npm dedupe' might help.
 		var body = document.body;
 		var page = document.createElement('div');
 
@@ -145,10 +145,10 @@ function initWallet() {
 		var angularJs = document.createElement('script');
 		angularJs.src = 'angular.js';
 		angularJs.onload = function() {
-			var byteballJS = document.createElement('script');
-			byteballJS.src = 'byteball.js';
-			body.appendChild(byteballJS);
-			byteballJS.onload = function() {
+			var intervalueJS = document.createElement('script');
+			intervalueJS.src = 'intervalue.js';
+			body.appendChild(intervalueJS);
+			intervalueJS.onload = function() {
 				if(showClient) showCompleteClient();
 			}
 		};

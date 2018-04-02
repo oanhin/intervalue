@@ -3,7 +3,7 @@
 // 钱包信息设置控制器
 angular.module('copayApp.controllers').controller('preferencesInformation',
     function ($scope, $log, $timeout, isMobile, gettextCatalog, lodash, profileService, storageService, go, configService) {
-        var constants = require('byteballcore/constants.js');
+        var constants = require('intervaluecore/constants.js');
         var fc = profileService.focusedClient;
         var c = fc.credentials;
 

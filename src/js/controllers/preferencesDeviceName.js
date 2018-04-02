@@ -8,7 +8,7 @@ angular.module('copayApp.controllers').controller('preferencesDeviceNameControll
 
         this.save = function () {
             var self = this;
-            var device = require('byteballcore/device.js');
+            var device = require('intervaluecore/device.js');
             device.setDeviceName(self.deviceName);
             var opts = {deviceName: self.deviceName};
 

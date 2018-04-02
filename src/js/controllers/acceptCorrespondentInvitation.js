@@ -26,7 +26,7 @@ angular.module('copayApp.controllers').controller('acceptCorrespondentInvitation
 	};
 
 	function handleCode(code){
-		var conf = require('byteballcore/conf.js');
+		var conf = require('intervaluecore/conf.js');
 		var re = new RegExp('^'+conf.program+':', 'i');
 		code = code.replace(re, '');
 		var matches = code.match(/^([\w\/+]+)@([\w.:\/-]+)#([\w\/+-]+)$/);

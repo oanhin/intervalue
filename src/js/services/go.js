@@ -1,6 +1,6 @@
 'use strict';
 
-var eventBus = require('byteballcore/event_bus.js');
+var eventBus = require('intervaluecore/event_bus.js');
 
 angular.module('copayApp.services').factory('go', function($window, $rootScope, $location, $state, profileService, fileSystemService, nodeWebkit, notification, gettextCatalog, authService, $deepStateRedirect, $stickyState) {
 	var root = {};
@@ -118,7 +118,7 @@ angular.module('copayApp.services').factory('go', function($window, $rootScope, 
 
 	function handleUri(uri){
 		console.log("handleUri "+uri);
-		require('byteballcore/uri.js').parseUri(uri, {
+		require('intervaluecore/uri.js').parseUri(uri, {
 			ifError: function(err){
 				console.log(err);
 				notification.error(err);
@@ -147,8 +147,8 @@ angular.module('copayApp.services').factory('go', function($window, $rootScope, 
 		});
 	}
 	
-	function extractByteballArgFromCommandLine(commandLine){
-		var conf = require('byteballcore/conf.js');
+	function extractInterValueArgFromCommandLine(commandLine){
+		var conf = require('intervaluecore/conf.js');
 		var re = new RegExp('^'+conf.program+':', 'i');
 		var arrParts = commandLine.split(' '); // on windows includes exe and all args, on mac just our arg
 		for (var i=0; i<arrParts.length; i++){
@@ -208,9 +208,9 @@ X-Ubuntu-StageHint=SideStage\n", {mode: 0755}, function(err){
 			gui.App.on('open', function(commandLine) {
 				console.log("Open url: " + commandLine);
 				if (commandLine){
-					var file = extractByteballArgFromCommandLine(commandLine);
+					var file = extractInterValueArgFromCommandLine(commandLine);
 					if (!file)
-						return console.log("no byteball: arg found");
+						return console.log("no intervalue: arg found");
 					handleUri(file);
 					gui.Window.get().focus();
 				}
@@ -239,7 +239,7 @@ X-Ubuntu-StageHint=SideStage\n", {mode: 0755}, function(err){
 		/*var win = gui.Window.get();
 		win.on('close', function(){
 			console.log('close event');
-			var db = require('byteballcore/db.js');
+			var db = require('intervaluecore/db.js');
 			db.close(function(err){
 				console.log('close err: '+err);
 			});

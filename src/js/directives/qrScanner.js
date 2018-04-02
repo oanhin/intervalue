@@ -1,6 +1,6 @@
 'use strict';
 
-var breadcrumbs = require('byteballcore/breadcrumbs.js');
+var breadcrumbs = require('intervaluecore/breadcrumbs.js');
 
 angular.module('copayApp.directives')
     .directive('qrScanner', ['$rootScope', '$timeout', '$modal', 'isCordova', 'gettextCatalog',

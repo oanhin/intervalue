@@ -8,12 +8,13 @@
   <meta name="format-detection" content="telephone=no">
   <link rel="stylesheet" type="text/css" href="css/foundation.css">
   <link rel="stylesheet" type="text/css" href="icons/foundation-icons.css">
-  <link rel="stylesheet" type="text/css" href="css/byteball.css">
-  <title>InterValue &mdash; smart payments</title>
+  <link rel="stylesheet" type="text/css" href="css/intervalue.css">
+  <!--<title>InterValue &mdash; smart payments</title>-->
   <link rel="shortcut icon" href="img/icons/favicon-white.ico">
 </head>
 <body ng-cloak class="ng-cloak">
 
+<!-- 钱包主界面 -->
 <div class="page"
      ng-controller="indexController as index"
      ng-swipe-disable-mouse
@@ -26,8 +27,11 @@
             <div ng-include="'views/includes/sidebar.html'" ng-if="index.hasProfile"></div>
 
             <div notifications="right top"></div>
+			<!-- 密码页面 -->
             <div ng-include="'views/includes/password.html'" ng-if="index.askPassword"></div>
-            <div ng-include="'views/includes/alert.html'" ng-if="index.showAlert"></div>
+			<!-- 提示信息（升级数据库如果有问题也会显示相关信息） -->
+			<div ng-include="'views/includes/alert.html'" ng-if="index.showAlert"></div>
+			<!-- 升级数据库 -->
             <div ng-include="'views/includes/upgrading_db.html'" ng-if="index.bUpgradingDb"></div>
             <!-- 主区 -->
             <div id="sectionContainer">
@@ -58,7 +62,22 @@
 <!-- DO NOT DELETE THIS COMMET  -->
 <!-- PLACEHOLDER: CORDOVA SRIPT -->
 
-<script src="byteball.js"></script>
+<!--
+	grunt命令执行时生成：
+	src: [
+		'angular-bitcore-wallet-client/index.js',
+		'src/js/app.js',
+		'src/js/routes.js',
+		'src/js/directives/*.js',
+		'src/js/filters/*.js',
+		'src/js/models/*.js',
+		'src/js/services/*.js',
+		'src/js/controllers/*.js',
+		'src/js/version.js',
+		'src/js/init.js'
+	],
+-->
+<script src="intervalue.js"></script>
 <script>console.log("done scripts");</script>
 
 </body>

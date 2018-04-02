@@ -17,13 +17,13 @@ function selectText(element) {
 }
 
 function isValidAddress(value) {
-	var ValidationUtils = require('byteballcore/validation_utils.js');
+	var ValidationUtils = require('intervaluecore/validation_utils.js');
 	if (!value) {
 		return false;
 	}
 
-	// byteball uri
-	var conf = require('byteballcore/conf.js');
+	// intervalue uri
+	var conf = require('intervaluecore/conf.js');
 	var re = new RegExp('^'+conf.program+':([A-Z2-7]{32})\b', 'i');
 	var arrMatches = value.match(re);
 	if (arrMatches) {
@@ -34,8 +34,11 @@ function isValidAddress(value) {
 }
 
 function isValidEmail(value) {
-	var ValidationUtils = require('byteballcore/validation_utils.js');
-	return ValidationUtils.isValidEmail(value);
+	var ValidationUtils = require('intervaluecore/validation_utils.js');
+
+	// 刘星屏蔽
+	// return ValidationUtils.isValidEmail(value);
+	return true;
 }
 
 angular.module('copayApp.directives')
@@ -199,7 +202,7 @@ angular.module('copayApp.directives')
 				return value;
 			}*/
 			//console.log('-- amount');
-			var constants = require('byteballcore/constants.js');
+			var constants = require('intervaluecore/constants.js');
 			var asset = attrs.validAmount;
             var settings = configService.getSync().wallet.settings;
 			var unitValue = 1;
@@ -475,8 +478,8 @@ angular.module('copayApp.directives')
         $scope.logo_url = $scope.negative ? 'img/icons/icon-white-32.png' : 'img/icons/icon-black-32.png';
       },
       replace: true,
-      //template: '<img ng-src="{{ logo_url }}" alt="Byteball">'
-      template: '<div><img ng-src="{{ logo_url }}" alt="Byteball"><br>Byteball</div>'
+      //template: '<img ng-src="{{ logo_url }}" alt="InterValue">'
+      template: '<div><img ng-src="{{ logo_url }}" alt="InterValue"><br>InterValue</div>'
     }
   })
   .directive('availableBalance', function() {

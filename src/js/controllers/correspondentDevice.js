@@ -1,24 +1,24 @@
 'use strict';
 
 
-var constants = require('byteballcore/constants.js');
+var constants = require('intervaluecore/constants.js');
 
 angular.module('copayApp.controllers').controller('correspondentDeviceController',
   function($scope, $rootScope, $timeout, $sce, $modal, configService, profileService, animationService, isCordova, go, correspondentListService, addressService, lodash, $deepStateRedirect, $state, backButton, gettext) {
 	
 	var async = require('async');
-	var chatStorage = require('byteballcore/chat_storage.js');
+	var chatStorage = require('intervaluecore/chat_storage.js');
 	var self = this;
 	console.log("correspondentDeviceController");
-	var ValidationUtils = require('byteballcore/validation_utils.js');
-	var objectHash = require('byteballcore/object_hash.js');
-	var db = require('byteballcore/db.js');
-	var network = require('byteballcore/network.js');
-	var device = require('byteballcore/device.js');
-	var eventBus = require('byteballcore/event_bus.js');
-	var conf = require('byteballcore/conf.js');
-	var storage = require('byteballcore/storage.js');
-	var breadcrumbs = require('byteballcore/breadcrumbs.js');
+	var ValidationUtils = require('intervaluecore/validation_utils.js');
+	var objectHash = require('intervaluecore/object_hash.js');
+	var db = require('intervaluecore/db.js');
+	var network = require('intervaluecore/network.js');
+	var device = require('intervaluecore/device.js');
+	var eventBus = require('intervaluecore/event_bus.js');
+	var conf = require('intervaluecore/conf.js');
+	var storage = require('intervaluecore/storage.js');
+	var breadcrumbs = require('intervaluecore/breadcrumbs.js');
 	
 	var fc = profileService.focusedClient;
 	var chatScope = $scope;
@@ -36,7 +36,7 @@ angular.module('copayApp.controllers').controller('correspondentDeviceController
 
 	$scope.$watch("correspondent.my_record_pref", function(pref, old_pref) {
 		if (pref == old_pref) return;
-		var device = require('byteballcore/device.js');
+		var device = require('intervaluecore/device.js');
 		device.sendMessageToDevice(correspondent.device_address, "chat_recording_pref", pref, {
 			ifOk: function(){
 				device.updateCorrespondentProps(correspondent);
@@ -165,7 +165,7 @@ angular.module('copayApp.controllers').controller('correspondentDeviceController
 	
 	
 	$scope.offerContract = function(address){
-		var walletDefinedByAddresses = require('byteballcore/wallet_defined_by_addresses.js');
+		var walletDefinedByAddresses = require('intervaluecore/wallet_defined_by_addresses.js');
 		$rootScope.modalOpened = true;
 		var fc = profileService.focusedClient;
 		$scope.oracles = configService.oracles;
@@ -399,7 +399,7 @@ angular.module('copayApp.controllers').controller('correspondentDeviceController
 								paymentRequestCode = 'payment:'+paymentJsonBase64;
 							}
 							else
-								paymentRequestCode = 'byteball:'+my_address+'?amount='+peer_amount+'&asset='+encodeURIComponent(contract.peerAsset);
+								paymentRequestCode = 'intervalue:'+my_address+'?amount='+peer_amount+'&asset='+encodeURIComponent(contract.peerAsset);
 							var paymentRequestText = '[your share of payment to the contract]('+paymentRequestCode+')';
 							device.sendMessageToDevice(correspondent.device_address, 'text', paymentRequestText);
 							var body = correspondentListService.formatOutgoingMessage(paymentRequestText);
@@ -444,7 +444,7 @@ angular.module('copayApp.controllers').controller('correspondentDeviceController
 	
 
 	$scope.sendMultiPayment = function(paymentJsonBase64){
-		var walletDefinedByAddresses = require('byteballcore/wallet_defined_by_addresses.js');
+		var walletDefinedByAddresses = require('intervaluecore/wallet_defined_by_addresses.js');
 		var paymentJson = Buffer(paymentJsonBase64, 'base64').toString('utf8');
 		console.log("multi "+paymentJson);
 		var objMultiPaymentRequest = JSON.parse(paymentJson);
@@ -952,7 +952,7 @@ angular.module('copayApp.controllers').controller('correspondentDeviceController
 	}
 	
 	function issueNextAddress(cb){
-		var walletDefinedByKeys = require('byteballcore/wallet_defined_by_keys.js');
+		var walletDefinedByKeys = require('intervaluecore/wallet_defined_by_keys.js');
 		walletDefinedByKeys.issueNextAddress(profileService.focusedClient.credentials.walletId, 0, function(addressInfo){
 			if (cb)
 				cb(addressInfo.address);
@@ -963,7 +963,7 @@ angular.module('copayApp.controllers').controller('correspondentDeviceController
 	function issueNextAddressIfNecessary(onDone){
 		if (myPaymentAddress) // do not issue new address
 			return onDone();
-		var walletDefinedByKeys = require('byteballcore/wallet_defined_by_keys.js');
+		var walletDefinedByKeys = require('intervaluecore/wallet_defined_by_keys.js');
 		walletDefinedByKeys.issueOrSelectNextAddress(fc.credentials.walletId, 0, function(addressInfo){
 			myPaymentAddress = addressInfo.address; // cache it in case we need to insert again
 			onDone();
@@ -1032,7 +1032,7 @@ angular.module('copayApp.controllers').controller('correspondentDeviceController
 				if (asset !== 'base')
 					params += '&asset='+encodeURIComponent(asset);
 				var units = profileService.getUnitName(asset);
-				appendText('['+amount+' '+units+'](byteball:'+myPaymentAddress+'?'+params+')');
+				appendText('['+amount+' '+units+'](intervalue:'+myPaymentAddress+'?'+params+')');
 				$modalInstance.dismiss('cancel');
 			};
 

@@ -131,10 +131,6 @@ msgstr "已付款"
 msgid "Also"
 msgstr "还有"
 
-#: public/views/splash.html:91
-msgid "Also in the Settings menu, you will find security options such as setting a password."
-msgstr "此外在设置菜单中，你可以找到安全选项例如设置密码"
-
 #: public/views/includes/password.html:42
 msgid "Also, don't forget to delete your seed"
 msgstr "此外，不要忘记删除你的口令私钥"
@@ -171,7 +167,7 @@ msgid "Asset"
 msgstr "资产"
 
 #: public/views/walletHome.html:455
-msgid "Attest profile data linked to any Byteball address."
+msgid "Attest profile data linked to any InterValue address."
 msgstr ""
 
 #: public/views/walletHome.html:308
@@ -962,7 +958,7 @@ msgid "Port"
 msgstr "端口号"
 
 #: public/views/walletHome.html:461
-msgid "Post arbitrary key-value pairs of data into Byteball network."
+msgid "Post arbitrary key-value pairs of data into InterValue network."
 msgstr ""
 
 #: public/views/walletHome.html:452
@@ -1307,6 +1303,9 @@ msgstr "点击重试"
 msgid "Terms of Use"
 msgstr "使用条款"
 
+msgid "InterValue Terms of Use"
+msgstr "InterValue使用条款"
+
 #: public/views/correspondentDevice.html:341
 msgid "Text message to"
 msgstr "发送短信"
@@ -1482,7 +1481,7 @@ msgstr "警告:"
 
 #: public/views/splash.html:53
 msgid "WELCOME TO INTERVALUE"
-msgstr "欢迎来到 INTERVALUE"
+msgstr "欢迎来到INTERVALUE"
 
 #: public/views/copayers.html:24
 msgid "Waiting for co-signers"
@@ -1601,9 +1600,13 @@ msgstr "你的钱包文件："
 msgid "Your wallet key will be encrypted. Password cannot be recovered. Be sure to write it down"
 msgstr "您的钱包密码将被加密，密码无法被恢复，一定要记下来。"
 
-#: public/views/splash.html:90
+#: public/views/splash.html:99
 msgid "Your wallet will be created on this device, keep it safe.  See your backup options in the Settings menu."
 msgstr "你的钱包将被创建在此设备上，请确保其是安全的。请在设备菜单中查看备份选项。"
+
+#: public/views/splash.html:100
+msgid "Also in the Settings menu, you will find security options such as setting a password."
+msgstr "此外在设置菜单中，你可以找到安全选项例如设置密码"
 
 #: public/views/create.html:94
 msgid "[ Add new co-signer device ]"

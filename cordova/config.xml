@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="org.byteball.wallet.testnet"
+<widget id="org.intervalue.wallet.testnet"
   version="2.1.0"
   android-versionCode="1062"
   ios-CFBundleVersion="2.1.0">
@@ -7,7 +7,7 @@
     <description>
       Intervalue wallet for testnet.
     </description>
-    <author email="byteball@byteball.org" href="https://byteball.org">
+    <author email="intervalue@inve.one" href="https://inve.one">
         Intervalue
     </author>
     <content src="index.html" />

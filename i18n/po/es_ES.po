@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: byteball\n"
+"Project-Id-Version: intervalue\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: crowdin.com\n"
-"X-Crowdin-Project: byteball\n"
+"X-Crowdin-Project: intervalue\n"
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: /master/i18n/po/template.pot\n"
 "Last-Translator: testz <testzcrypto@gmail.com>\n"
@@ -26,8 +26,8 @@ msgid "-- Select co-signer --"
 msgstr "-- Seleccione co-firmante --"
 
 #: public/views/preferencesGlobal.html:135
-msgid "About Byteball"
-msgstr "Acerca de Byteball"
+msgid "About InterValue"
+msgstr "Acerca de InterValue"
 
 #: src/js/controllers/copayers.js:8
 #: src/js/controllers/preferencesDelete.js:9
@@ -105,8 +105,8 @@ msgid "All Wallet Addresses"
 msgstr "Todas las direcciones"
 
 #: public/views/translators.html:52
-msgid "All contributions to Byteball's translation are welcome. Sign up at crowdin.com and join the Byteball project at"
-msgstr "Todas las contribuciones a la traducción de Byteball son bienvenidas. Regístrese en crowdin.com y únase al proyecto Byteball en"
+msgid "All contributions to InterValue's translation are welcome. Sign up at crowdin.com and join the InterValue project at"
+msgstr "Todas las contribuciones a la traducción de InterValue son bienvenidas. Regístrese en crowdin.com y únase al proyecto InterValue en"
 
 #: public/views/modals/multi-payment.html:56
 msgid "Already Paid"
@@ -155,7 +155,7 @@ msgid "Asset"
 msgstr "Activo"
 
 #: public/views/walletHome.html:455
-msgid "Attest profile data linked to any Byteball address."
+msgid "Attest profile data linked to any InterValue address."
 msgstr ""
 
 #: public/views/walletHome.html:308
@@ -238,8 +238,8 @@ msgid "Browser unsupported"
 msgstr "Navegador no soportado"
 
 #: public/views/modals/destination-address.html:119
-msgid "Byteball address"
-msgstr "Dirección Byteball"
+msgid "InterValue address"
+msgstr "Dirección InterValue"
 
 #: public/views/includes/password.html:24
 msgid "CANCEL"
@@ -391,7 +391,7 @@ msgid "Could not import. Check input file and password"
 msgstr "No se pudo importar. Verifique archivo y contraseña"
 
 #: src/js/controllers/walletHome.js:49
-msgid "Could not recognize a valid Byteball QR Code"
+msgid "Could not recognize a valid InterValue QR Code"
 msgstr "No se pudo leer un código QR válido"
 
 #: src/js/controllers/walletHome.js:601
@@ -520,7 +520,7 @@ msgid "Download CSV file"
 msgstr "Descargar archivo CSV"
 
 #: public/views/splash.html:26
-msgid "Download the entire Byteball database"
+msgid "Download the entire InterValue database"
 msgstr ""
 
 #: public/views/correspondentDevice.html:26
@@ -783,8 +783,8 @@ msgid "Multidevice Wallet"
 msgstr "Monedero multidispositivo"
 
 #: public/views/walletHome.html:222
-msgid "My Byteball address"
-msgstr "Mi dirección Byteball"
+msgid "My InterValue address"
+msgstr "Mi dirección InterValue"
 
 #: public/views/correspondentDevice.html:297
 msgid "My recording preference"
@@ -946,7 +946,7 @@ msgid "Port"
 msgstr "Puerto"
 
 #: public/views/walletHome.html:461
-msgid "Post arbitrary key-value pairs of data into Byteball network."
+msgid "Post arbitrary key-value pairs of data into InterValue network."
 msgstr ""
 
 #: public/views/walletHome.html:452
@@ -1374,7 +1374,7 @@ msgid "To be able to restore everything, please create a full backup (find the o
 msgstr ""
 
 #: public/views/walletHome.html:517
-msgid "To be able to send arbitrary data into Byteball network, please switch to a single-address wallet first or create one."
+msgid "To be able to send arbitrary data into InterValue network, please switch to a single-address wallet first or create one."
 msgstr ""
 
 #: public/views/walletHome.html:360
@@ -1464,8 +1464,8 @@ msgid "WARNINGS:"
 msgstr "AVISOS:"
 
 #: public/views/splash.html:53
-msgid "WELCOME TO BYTEBALL"
-msgstr "BIENVENIDO A BYTEBALL"
+msgid "WELCOME TO INTERVALUE"
+msgstr "BIENVENIDO A INTERVALUE"
 
 #: public/views/copayers.html:24
 msgid "Waiting for co-signers"
@@ -1501,8 +1501,8 @@ msgid "Wallet Name (at creation)"
 msgstr "Nombre del Monedero (al crear)"
 
 #: src/js/services/profileService.js:393
-msgid "Wallet already in Byteball:"
-msgstr "Monedero ya en Byteball:"
+msgid "Wallet already in InterValue:"
+msgstr "Monedero ya en InterValue:"
 
 #: public/views/create.html:48
 msgid "Wallet name"
@@ -1678,7 +1678,7 @@ msgid "or"
 msgstr ""
 
 #: public/views/backup.html:24
-msgid "or backup all Byteball data at"
+msgid "or backup all InterValue data at"
 msgstr ""
 
 #: public/views/modals/offer-contract.html:51

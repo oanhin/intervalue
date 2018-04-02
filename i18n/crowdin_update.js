@@ -7,7 +7,7 @@ var path = require('path');
 var https = require('https');
 var bhttp = require('bhttp');
 
-var crowdin_identifier = 'byteball'
+var crowdin_identifier = 'intervalue'
 
 var local_file_name1 = path.join(__dirname, 'po/template.pot')
 

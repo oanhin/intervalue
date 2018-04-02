@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: byteball\n"
+"Project-Id-Version: intervalue\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: crowdin.com\n"
-"X-Crowdin-Project: byteball\n"
+"X-Crowdin-Project: intervalue\n"
 "X-Crowdin-Language: uk\n"
 "X-Crowdin-File: /master/i18n/po/template.pot\n"
 "Last-Translator: testz <testzcrypto@gmail.com>\n"
@@ -26,8 +26,8 @@ msgid "A wallet for decentralized value"
 msgstr ""
 
 #: public/views/preferencesGlobal.html:135
-msgid "About Byteball"
-msgstr "Про Byteball"
+msgid "About InterValue"
+msgstr "Про InterValue"
 
 #: src/js/controllers/copayers.js:8
 #: src/js/controllers/preferencesDelete.js:9
@@ -89,7 +89,7 @@ msgid "All Wallet Addresses"
 msgstr ""
 
 #: public/views/translators.html:26
-msgid "All contributions to Byteball's translation are welcome. Sign up at crowdin.com and join the Byteball project at"
+msgid "All contributions to InterValue's translation are welcome. Sign up at crowdin.com and join the InterValue project at"
 msgstr ""
 
 #: public/views/walletHome.html:107
@@ -304,7 +304,7 @@ msgid "Could not import. Check input file and password"
 msgstr ""
 
 #: src/js/controllers/walletHome.js:48
-msgid "Could not recognize a valid Byteball QR Code"
+msgid "Could not recognize a valid InterValue QR Code"
 msgstr ""
 
 #: src/js/controllers/walletHome.js:595
@@ -682,7 +682,7 @@ msgid "Multidevice Wallet"
 msgstr ""
 
 #: public/views/walletHome.html:197
-msgid "My Byteball address"
+msgid "My InterValue address"
 msgstr ""
 
 #: public/views/paymentUri.html:18
@@ -1153,7 +1153,7 @@ msgid "The wallet will contain minimum information relevant to you.  The wallet 
 msgstr ""
 
 #: public/views/splash.html:26
-msgid "The wallet will contain the most current state of the entire Byteball database.  This option is better for privacy but will consume more resources and the initial sync will take several hours."
+msgid "The wallet will contain the most current state of the entire InterValue database.  This option is better for privacy but will consume more resources and the initial sync will take several hours."
 msgstr ""
 
 #: public/views/paymentUri.html:23
@@ -1263,7 +1263,7 @@ msgid "WARNINGS:"
 msgstr ""
 
 #: public/views/splash.html:49
-msgid "WELCOME TO BYTEBALL"
+msgid "WELCOME TO INTERVALUE"
 msgstr ""
 
 #: public/views/copayers.html:16
@@ -1300,7 +1300,7 @@ msgid "Wallet Name (at creation)"
 msgstr ""
 
 #: src/js/services/profileService.js:386
-msgid "Wallet already in Byteball:"
+msgid "Wallet already in InterValue:"
 msgstr ""
 
 #: public/views/create.html:48

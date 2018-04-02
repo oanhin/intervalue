@@ -6,7 +6,7 @@ angular.module('copayApp.controllers').controller('importController',
 		var JSZip = require("jszip");
 		var async = require('async');
 		var crypto = require('crypto');
-		var conf = require('byteballcore/conf');
+		var conf = require('intervaluecore/conf');
 		var userAgent = navigator.userAgent;
 		
 		if(isCordova) {
@@ -27,7 +27,7 @@ angular.module('copayApp.controllers').controller('importController',
 		self.oldAndroidFileName = '';
 		
 		function generateListFilesForIos() {
-			var backupDirPath = window.cordova.file.documentsDirectory + '/Byteball/';
+			var backupDirPath = window.cordova.file.documentsDirectory + '/InterValue/';
 			fileSystemService.readdir(backupDirPath, function(err, listFilenames) {
 				if (listFilenames){
 					listFilenames.forEach(function(name) {
@@ -48,7 +48,7 @@ angular.module('copayApp.controllers').controller('importController',
 		if (self.iOs) generateListFilesForIos();
 		
 		function writeDBAndFileStorageMobile(zip, cb) {
-			var db = require('byteballcore/db');
+			var db = require('intervaluecore/db');
 			var dbDirPath = fileSystemService.getDatabaseDirPath() + '/';
 			db.close(function() {
 				async.forEachOfSeries(zip.files, function(objFile, key, callback) {
@@ -78,7 +78,7 @@ angular.module('copayApp.controllers').controller('importController',
 		}
 		
 		function writeDBAndFileStoragePC(cb) {
-			var db = require('byteballcore/db');
+			var db = require('intervaluecore/db');
 			var dbDirPath = fileSystemService.getDatabaseDirPath() + '/';
 			db.close(function() {
 				async.series([
@@ -244,7 +244,7 @@ angular.module('copayApp.controllers').controller('importController',
 		self.iosWalletImportFromFile = function(fileName) {
 			$rootScope.$emit('Local/NeedsPassword', false, null, function(err, password) {
 				if (password) {
-					var backupDirPath = window.cordova.file.documentsDirectory + '/Byteball/';
+					var backupDirPath = window.cordova.file.documentsDirectory + '/InterValue/';
 					fileSystemService.readFile(backupDirPath + fileName, function(err, data) {
 						if (err) return showError(err);
 						unzipAndWriteFiles(data, password);
