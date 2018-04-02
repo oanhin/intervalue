@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=InterValue
+Comment=Next Generation Globe Value Internet
+Exec=bash -c 'cd $(dirname %k) && ./InterValue-TN %u'
+Icon=icon-white-256.png
+Terminal=false
+Categories=Office;Finance;
+MimeType=x-scheme-handler/intervalue;
+X-Ubuntu-Touch=true
+X-Ubuntu-StageHint=SideStage
