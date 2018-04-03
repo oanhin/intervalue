@@ -1,2 +1,2 @@
 window.version="1.0.0";
-window.commitHash="450161f";
+window.commitHash="62149f4";
