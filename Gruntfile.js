@@ -235,7 +235,7 @@ module.exports = function (grunt) {
 				//platforms: ['win','osx64','linux'],
 				//platforms: ['osx64'],
 				platforms: [getPlatform()],
-				appName: 'Intervalue',
+				appName: 'InterValue',
 				buildDir: '../intervaluebuilds',
 				version: '0.14.7',
 				zip: false,
@@ -263,12 +263,12 @@ module.exports = function (grunt) {
 			},
 			linux64: {
 				options: {
-					archive: '../intervaluebuilds/Intervalue-linux64.zip'
+					archive: '../intervaluebuilds/InterValue-linux64.zip'
 				},
 				expand: true,
-				cwd: '../intervaluebuilds/Intervalue/linux64/',
+				cwd: '../intervaluebuilds/InterValue/linux64/',
 				src: ['**/*'],
-				dest: 'Intervalue-linux64/'
+				dest: 'InterValue-linux64/'
 			}
 		},
 		browserify: {
@@ -301,7 +301,7 @@ module.exports = function (grunt) {
 				],
 				options: {
 					maintainer: {
-						name: 'Intervalue',
+						name: 'InterValue',
 						email: 'intervalue@hashproject.net'
 					},
 					long_description: 'Smart payments made simple',

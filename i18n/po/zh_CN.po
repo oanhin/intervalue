@@ -121,7 +121,7 @@ msgstr "所有钱包地址"
 
 #: public/views/translators.html:52
 msgid "All contributions to InterValue's translation are welcome. Sign up at crowdin.com and join the InterValue project at"
-msgstr "欢迎为Intervalue的翻译添砖加瓦，注册crowdin.com并参与InterValue项目"
+msgstr "欢迎为InterValue的翻译添砖加瓦，注册crowdin.com并参与InterValue项目"
 
 #: public/views/modals/multi-payment.html:56
 msgid "Already Paid"
@@ -1518,7 +1518,7 @@ msgstr "钱包名称 (创建时)"
 
 #: src/js/services/profileService.js:393
 msgid "Wallet already in InterValue:"
-msgstr "钱包已存在Intervalue中："
+msgstr "钱包已存在InterValue中："
 
 #: public/views/create.html:48
 msgid "Wallet name"
