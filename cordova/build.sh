@@ -175,6 +175,18 @@ else
 		cordova platforms add android
 		checkOK
 	fi
+
+	if [ $CURRENT_OS == "IOS" ]; then
+		echo "${OpenColor}${Green}* Adding IOS platform... ${CloseColor}"
+		cordova platforms add ios
+		checkOK
+	fi
+
+	if [ $CURRENT_OS == "WP8" ]; then
+		echo "${OpenColor}${Green}* Adding WP8 platform... ${CloseColor}"
+		cordova platforms add wp8
+		checkOK
+	fi
 fi
 
 if $DBGJS; then
