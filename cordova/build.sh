@@ -17,22 +17,16 @@ BUILDDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PROJECT="$BUILDDIR/../../intervaluebuilds/project-$1-tn"
 
 CURRENT_OS=$1
-
-if [ -z "CURRENT_OS" ]
-then
- echo "Build.sh WP8|ANDROID|IOS"
+if [ -z "CURRENT_OS" ]; then
+ 	echo "Build.sh WP8|ANDROID|IOS"
 fi
 
 CLEAR=false
 DBGJS=false
-
-if [[ $2 == "--clear" || $3 == "--clear" ]]
-then
+if [[ $2 == "--clear" || $3 == "--clear" ]]; then
 	CLEAR=true
 fi
-
-if [[ $2 == "--dbgjs" || $3 == "--dbgjs" ]]
-then
+if [[ $2 == "--dbgjs" || $3 == "--dbgjs" ]]; then
 	DBGJS=true
 fi
 
@@ -41,18 +35,10 @@ echo "${OpenColor}${Green}* Checking dependencies...${CloseColor}"
 command -v cordova >/dev/null 2>&1 || { echo >&2 "Cordova is not present, please install it: sudo npm install -g cordova."; exit 1; }
 #command -v xcodebuild >/dev/null 2>&1 || { echo >&2 "XCode is not present, install it or use [--android]."; exit 1; }
 
-# Create project dir
-if $CLEAR
-then
-	if [ -d $PROJECT ]; then
-		rm -rf $PROJECT
-	fi
-fi
 
+# Create project dir
 echo "Build directory is $BUILDDIR"
 echo "Project directory is $PROJECT"
-
-
 if [ ! -d $PROJECT ]; then
 	cd $BUILDDIR
 	echo "${OpenColor}${Green}* Creating project... ${CloseColor}"
@@ -146,11 +132,11 @@ if [ ! -d $PROJECT ]; then
 	checkOK
 
 	if [ $CURRENT_OS == "ANDROID" ]; then
-	cordova plugin add https://github.com/phonegap-build/PushPlugin.git
-	checkOK
+		cordova plugin add https://github.com/phonegap-build/PushPlugin.git
+		checkOK
 
-	cordova plugin add https://github.com/8zrealestate/android-referrer-plugin
-	checkOK
+		cordova plugin add https://github.com/8zrealestate/android-referrer-plugin
+		checkOK
 	fi
 	
 	cordova plugin add https://github.com/xJeneKx/MFileChooser.git
@@ -158,11 +144,40 @@ if [ ! -d $PROJECT ]; then
 
 	cordova plugin add cordova-plugin-app-preferences
 	checkOK
+else
+	if $CLEAR; then
+		if [ -d $PROJECT/plugins/ ]; then 
+			echo "${OpenColor}${Green}* Backup plugins... ${CloseColor}"
+			mv $PROJECT/plugins/ $BUILDDIR/../..
+			checkOK
+		fi
 
+		echo "${OpenColor}${Green}* Clear project... ${CloseColor}"
+		rm -rf $PROJECT
+		checkOK
+
+		cd $BUILDDIR
+		echo "${OpenColor}${Green}* Creating project... ${CloseColor}"
+		cordova create ../../intervaluebuilds/project-$1-tn org.intervalue.wallet.test InterValue
+		checkOK
+
+		if [ -d $BUILDDIR/../../plugins/ ]; then 
+			echo "${OpenColor}${Green}* Move plugins back... ${CloseColor}"
+			mv $BUILDDIR/../../plugins/ $PROJECT
+			checkOK
+		fi
+	fi
+
+	cd $PROJECT
+
+	if [ $CURRENT_OS == "ANDROID" ]; then
+		echo "${OpenColor}${Green}* Adding Android platform... ${CloseColor}"
+		cordova platforms add android
+		checkOK
+	fi
 fi
 
-if $DBGJS
-then
+if $DBGJS; then
 	echo "${OpenColor}${Green}* Generating intervalue bundle (debug js)...${CloseColor}"
 	cd $BUILDDIR/..
 	grunt cordova
@@ -174,9 +189,10 @@ else
 	checkOK
 fi
 
+# copy project codes
 echo "${OpenColor}${Green}* Copying files...${CloseColor}"
 cd $BUILDDIR/..
-mkdir $PROJECT/www
+test ! -d $PROJECT/www && mkdir $PROJECT/www
 cp -af public/** $PROJECT/www
 checkOK
 
@@ -190,10 +206,10 @@ rm $PROJECT/www/partialClient.html
 checkOK
 
 cd $BUILDDIR
-
-cp config.xml $PROJECT/config.xml
+cp -f config.xml $PROJECT/config.xml
 checkOK
 
+# ANDROID
 if [ $CURRENT_OS == "ANDROID" ]; then
 	echo "Android project!!!"
 	
@@ -215,8 +231,8 @@ if [ $CURRENT_OS == "ANDROID" ]; then
 	checkOK
 fi
 
+# IOS
 if [ $CURRENT_OS == "IOS" ]; then
-
 	echo "IOS project!!!"
 
 	cp -R ios $PROJECT/../
@@ -240,12 +256,12 @@ if [ $CURRENT_OS == "IOS" ]; then
 #  checkOK
 fi
 
+# WP8
 if [ $CURRENT_OS == "WP8" ]; then
 	echo "Wp8 project!!!"
 	cp -R $PROJECT/www/* $PROJECT/platforms/wp8/www
 	checkOK
-	if ! $CLEAR
-	then
+	if ! $CLEAR; then
 		cp -vf wp/Properties/* $PROJECT/platforms/wp8/Properties/
 		checkOK
 		cp -vf wp/MainPage.xaml $PROJECT/platforms/wp8/

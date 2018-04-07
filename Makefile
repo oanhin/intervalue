@@ -48,7 +48,7 @@ android-debug:
 	cordova/build.sh ANDROID --dbgjs --clear
 #	cp ./etc/beep.ogg ./cordova/project/plugins/phonegap-plugin-barcodescanner/src/android/LibraryProject/res/raw/beep.ogg
 	cd ../intervaluebuilds/project-ANDROID-tn && cordova run android --device
-	mv ../intervaluebuilds/platforms/android/build/outputs/apk/android-debug.apk ../intervaluebuilds/InterValue.apk
+	mv ../intervaluebuilds/project-ANDROID-tn/platforms/android/build/outputs/apk/android-debug.apk ../intervaluebuilds/InterValue.apk
 
 android-debug-fast:
 	cordova/build.sh ANDROID --dbgjs
