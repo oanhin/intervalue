@@ -235,7 +235,7 @@ module.exports = function (grunt) {
 				//platforms: ['win','osx64','linux'],
 				//platforms: ['osx64'],
 				platforms: [getPlatform()],
-				appName: 'InterValue',
+				appName: 'InterValue-TN',
 				buildDir: '../intervaluebuilds',
 				version: '0.14.7',
 				zip: false,
