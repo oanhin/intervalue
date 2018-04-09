@@ -642,22 +642,18 @@ angular.module('copayApp.controllers').controller('indexController', function ($
 		'icon': 'icon-home',
 		'link': 'walletHome'
 	}, {
-		'title': gettext('Receive'),
-		'icon': 'icon-receive2',
-		'link': 'receive'
-	}, {
 		'title': gettext('Send'),
-		'icon': 'icon-paperplane',
+		'icon': 'icon-jiaoyi',
 		'link': 'send'
 	}, {
-		'title': gettext('Wallet'),
-		'icon': 'icon-wallet',
-		'link': 'wallet'
-	}, {
 		'title': gettext('Chat'),
-		'icon': 'icon-bubble',
+		'icon': 'icon-duihua',
 		'new_state': 'correspondentDevices',
 		'link': 'chat'
+	},{
+		'title': gettext('Wallet'),
+		'icon': 'icon-qianbao1',
+		'link': 'wallet'
 	}];
 
 	self.addonViews = addonManager.addonViews();
@@ -1141,7 +1137,7 @@ angular.module('copayApp.controllers').controller('indexController', function ($
 					if (it.action == 'moved')
 						_note += ' Moved:' + it.amount
 
-					dataString = formatDate(it.time * 1000) + ',' + formatString(it.addressTo) + ',' + _note + ',' + _amount + ',byte,,,,';
+					dataString = formatDate(it.time * 1000) + ',' + formatString(it.addressTo) + ',' + _note + ',' + _amount/10000000000000000 + ',INVE,,,,';
 					csvContent += dataString + "\n";
 
 				});

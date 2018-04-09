@@ -92,7 +92,7 @@ _:-ms-fullscreen, :root .main {
 .tab-bar {
   background: #FFFFFF;
   z-index: 5;
-  border-bottom: 1px solid #E9E9EC;
+  border-bottom: 1px solid #2c3e50;
 }
 
 .tab-bar h1 {
@@ -149,7 +149,7 @@ _:-ms-fullscreen, :root .main {
   bottom: 0;
   width: 100%;
   z-index: 5;
-  background: #2C3E50;
+  background: #e4e4e4;
 }
 
 .second-bottom-bar {
@@ -238,14 +238,13 @@ ul.copayer-list img {
 }
 
 .bottombar-item {
-	width: 20%;
+	width: 25%;
 }
 
 .bottombar-item a {
   color: #9EA9B3;
   padding: 0.5rem 0;
   display: block;
-  border-top: 3px solid #122232;
 }
 
 .bottombar-item a.active {
@@ -853,7 +852,7 @@ textarea:focus
 .rn-carousel-control.rn-carousel-control-next, .rn-carousel-control.rn-carousel-control-prev {
 	opacity: 0.6;
 	font-size: 80px;
-	background-color: rgb(74, 144, 226);
+	background-color: rgb(122, 140, 158);
 }
 .rn-carousel-control.rn-carousel-control-next {
 	right: -0.2em;

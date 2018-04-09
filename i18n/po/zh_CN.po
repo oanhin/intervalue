@@ -1158,7 +1158,7 @@ msgstr "选择您的身份"
 #: public/views/walletHome.html:506
 #: src/js/controllers/index.js:601
 msgid "Send"
-msgstr "发送"
+msgstr "交易"
 
 #: public/views/walletHome.html:294
 msgid "Send All"

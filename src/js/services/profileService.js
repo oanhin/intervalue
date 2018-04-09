@@ -333,7 +333,7 @@ angular.module('copayApp.services')
                 var tempDeviceKey = device.genPrivKey();
                 // initDeviceProperties sets my_device_address needed by walletClient.createWallet
                 walletClient.initDeviceProperties(walletClient.credentials.xPrivKey, null, config.hub, config.deviceName);
-                var walletName = gettextCatalog.getString('InterValue Wallet');     //默认钱包名称
+                var walletName = gettextCatalog.getString('InterValue');     //默认钱包名称
                 walletClient.createWallet(walletName, 1, 1, {
                     //	isSingleAddress: true,
                     network: 'livenet'

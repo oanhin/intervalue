@@ -1,7 +1,7 @@
 <!-- 顶部导航栏视图 -->
-<nav ng-controller="topbarController as topbar" class="tab-bar">
+<nav ng-controller="topbarController as topbar" class="tab-bar" style="background-color: #2c3e50">
     <!-- 左区 -->
-    <section class="left-small">
+    <!--<section class="left-small">
         <a id="hamburger" class="p10" ng-show="!goBackToState && !closeToHome  && !index.noFocusedWallet"
                 ng-click="index.openMenu()"><i class="fi-list size-24"></i>
         </a>
@@ -14,18 +14,18 @@
                 ng-click="topbar.goHome(); closeToHome = null">
             <span class="text-close">{{'Close'|translate}}</span>
         </a>
-    </section>
+    </section>-->
 
     <!-- 右区 -->
     <section class="right-small" ng-show="showCamera">
-        <qr-scanner ng-show="index.isComplete" on-scan="topbar.onQrCodeScanned(data)"
-                    before-scan="topbar.onBeforeScan()"></qr-scanner>
+			<qr-scanner ng-show="index.isComplete" on-scan="topbar.onQrCodeScanned(data)"
+						before-scan="topbar.onBeforeScan()"></qr-scanner>
     </section>
 
     <!-- 中间区 -->
     <section class="middle tab-bar-section">
         <h1 class="title ellipsis"
-            ng-style="{'color': noColor ? '#4A90E2' : index.backgroundColor, 'max-width': '100%'}">
+            style="color: #FFFFFF">
             <span ng-if="index.arrBalances[index.assetIndex].shared === undefined && !index.shared_address || titleSection">{{(titleSection|translate) || (index.shared_address || index.alias || index.walletName)}}</span>
             <span ng-if="(index.arrBalances[index.assetIndex].shared !== undefined || index.shared_address) && !titleSection">
 			    <a ng-click="index.openSubwalletModal()" ng-style="{'color': noColor ? '#4A90E2' : index.backgroundColor}">

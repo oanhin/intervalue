@@ -9,40 +9,61 @@ angular.module('copayApp.controllers').controller('preferencesUnitController',
         //单元选项列表
         this.unitOpts = [
             {
-                name: 'INVE',
-                shortName: 'INVE',
+                name: 'bytes',
+                shortName: 'atom',
                 value: 1,
                 decimals: 0,
                 code: 'one',
             }
             , {
-                name: 'kINVE (1,000 INVE)',
-                shortName: 'kI',
+                name: 'kBytes (1,000 bytes)',
+                shortName: 'kA',
                 value: 1000,
                 decimals: 3,
                 code: 'kilo',
             }
             , {
-                name: 'MINVE (1,000,000 INVE)',
-                shortName: 'MI',
+                name: 'MBytes (1,000,000 bytes)',
+                shortName: 'MA',
                 value: 1000000,
                 decimals: 6,
                 code: 'mega',
             }
             , {
-                name: 'GINVE (1,000,000,000 INVE)',
-                shortName: 'GI',
+                name: 'GBytes (1,000,000,000 bytes)',
+                shortName: 'GA',
                 value: 1000000000,
                 decimals: 9,
                 code: 'giga',
             }
+			, {
+				name: 'TBytes (1,000,000,000,000 bytes)',
+				shortName: 'TA',
+				value: 1000000000000,
+				decimals: 12,
+				code: 'tera',
+			}
+			, {
+				name: 'PBytes (1,000,000,000,000,000 bytes)',
+				shortName: 'PA',
+				value: 1000000000000000,
+				decimals: 15,
+				code: 'peta ',
+			}
+			, {
+				name: 'EBytes (1,000,000,000,000,000,000 bytes)',
+				shortName: 'INVE',
+				value: 1000000000000000000,
+				decimals: 18,
+				code: 'exa',
+			}
         ];
 
-        this.unitName = this.unitOpts[0].unitName;  // 设置默认单元，刘星修改
+        this.unitName = this.unitOpts[7].unitName;  // 设置默认单元，刘星修改
 
         //保存单元设置
         this.save = function (newUnit) {
-            newUnit = this.unitOpts[0];             // 设置默认单元，刘星修改
+            newUnit = this.unitOpts[7];             // 设置默认单元，刘星修改
             var opts = {
                 wallet: {
                     settings: {

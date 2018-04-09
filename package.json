@@ -12,7 +12,7 @@
   ],
   "main": "public/index.html",
   "window": {
-    "title": "InterValue wallet",
+    "title": "InterValue",
     "icon": "./public/img/icons/icon-white-256.png",
     "show": true,
     "visible": true,
