@@ -137,7 +137,7 @@ function initWallet() {
 	}
 
 	function loadCompleteClient(showClient) {
-		self._bintervaluecoreLoaded = false; //"fix" : Looks like you are loading multiple copies of intervalue core, which is not supported. Running 'npm dedupe' might help.
+		self._bInterValueCoreLoaded = false; //"fix" : Looks like you are loading multiple copies of intervalue core, which is not supported. Running 'npm dedupe' might help.
 		var body = document.body;
 		var page = document.createElement('div');
 
