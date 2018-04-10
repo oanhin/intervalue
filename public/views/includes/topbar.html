@@ -17,10 +17,10 @@
     </section>
 
     <!-- 右区 -->
-    <section class="right-small" ng-show="showCamera">
-		
-			<qr-scanner ng-show="index.isComplete" on-scan="topbar.onQrCodeScanned(data)"
-						before-scan="topbar.onBeforeScan()"></qr-scanner>
+    <section class="right-small" >
+		<a id="hamburger" class="p10" ng-show="!goBackToState && !closeToHome  && !index.noFocusedWallet"
+		   ng-click="index.openMenu()"><i class="fi-list size-24"></i>
+		</a>
     </section>
 
     <!-- 中间区 -->

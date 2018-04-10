@@ -642,11 +642,11 @@ angular.module('copayApp.controllers').controller('indexController', function ($
 		'icon': 'icon-home',
 		'link': 'walletHome'
 	}, {
-		'title': gettext('Send'),
+		'title': gettext('Tranctions'),
 		'icon': 'icon-jiaoyi',
 		'link': 'send'
 	}, {
-		'title': gettext('Chat'),
+		'title': gettext('Message'),
 		'icon': 'icon-duihua',
 		'new_state': 'correspondentDevices',
 		'link': 'chat'

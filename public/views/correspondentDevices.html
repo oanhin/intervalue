@@ -30,8 +30,9 @@
         </section>
         <!-- 右区：二维码 -->
         <section class="right-small">
-            <qr-scanner ng-show="index.isComplete" on-scan="topbar.onQrCodeScanned(data)"
-                        before-scan="topbar.onBeforeScan()"></qr-scanner>
+			<a id="hamburger" class="p10" ng-show="!goBackToState && !closeToHome  && !index.noFocusedWallet"
+			   ng-click="index.openMenu()"><i class="fi-list size-24"></i>
+			</a>
         </section>
         <!-- 中间：标题及tab选项 -->
         <section class="middle tab-bar-section">
@@ -81,12 +82,12 @@
 
                 <!-- Contacts 页签显示内容 -->
                 <!-- 添加 -->
-                <li class="m10t" ng-show="!editCorrespondentList">
-                    <a ng-click="beginAddCorrespondent()" class="p10">
-                        <i class="fi-plus size-18 m10r" style="vertical-align: middle;"></i>
-                        <span class="text-close size-12" translate>Add a new device</span>
-                    </a>
-                </li>
+                <!--<li class="m10t" ng-show="!editCorrespondentList">-->
+                    <!--<a ng-click="beginAddCorrespondent()" class="p10">-->
+                        <!--<i class="fi-plus size-18 m10r" style="vertical-align: middle;"></i>-->
+                        <!--<span class="text-close size-12" translate>Add a new device</span>-->
+                    <!--</a>-->
+                <!--</li>-->
                 <!-- 刪除 -->
                 <li class="m10t" ng-show="!editCorrespondentList">
                     <a ng-click="hideRemove = !hideRemove" class="p10">
