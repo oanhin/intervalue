@@ -90,6 +90,11 @@ angular.module('copayApp.services').factory('go', function($window, $rootScope, 
 		$state.go('add');
 	};
 
+	root.receive = function() {
+		$state.go('receive');
+	};
+
+
 	root.preferences = function() {
 		$state.go('preferences');
 	};

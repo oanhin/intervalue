@@ -1,5 +1,5 @@
 <!-- 侧边栏视图 -->
-<nav class="sidebar left-off-canvas-menu" ng-controller="sidebarController as sidebar">
+<nav class="sidebar left-off-canvas-menu" >
 	<ul >
 		<!-- 扫一扫 -->
 	  	<!--<li ng-show="showCamera">-->
@@ -10,19 +10,20 @@
 
 		<!-- 收款地址 -->
 		<li>
-			<a ng-click="$root.go('receive')" class="oh">
+			<a ng-click="$root.go('receive')" >
 				<i class="icon-arrow-right3 size-18 right m10t"></i>
 				<i class="fi-plus size-24 icon"></i>
-				<div class="tu text-bold">
-					<span class="size-12" translate>receive address</span>
-				</div>
+				<span class="size-12 text-bold" translate>receive address</span>
+				<!--<div class="tu text-bold">-->
+					<!--<span class="size-12" translate>receive address</span>-->
+				<!--</div>-->
 				<!--<div translate>My INVE address</div>-->
 			</a>
 		</li>
 
 		<!--添加钱包-->
 		<li>
-			<a ng-click="$root.go('correspondentDevices.addCorrespondentDevice')" class="oh">
+			<a ng-click="$root.go('correspondentDevices.addCorrespondentDevice');" class="oh">
 				<i class="icon-arrow-right3 size-18 right m10t"></i>
 				<i class="fi-plus size-24 icon"></i>
 				<div class="tu text-bold">

@@ -121,17 +121,6 @@ angular
 					},
 				}
 			})
-			.state('receive', {
-				url: '/receive',
-				templateUrl: 'receive.html',
-				needProfile: true,
-				modal: true,
-				views: {
-					'main': {
-						templateUrl: 'receive.html'
-					},
-				}
-			})
 			.state('copayers', {
 				url: '/copayers',
 				needProfile: true,
@@ -498,6 +487,15 @@ angular
 				views: {
 					'main': {
 						templateUrl: 'views/add.html'
+					},
+				}
+			})
+			.state('receive', {
+				url: '/receive',
+				templateUrl: 'receive.html',
+				views: {
+					'main': {
+						templateUrl: 'receive.html'
 					},
 				}
 			})
