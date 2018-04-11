@@ -6,7 +6,6 @@
 
 <!-- 偏好设置视图 -->
 <div class="content preferences" ng-controller="preferencesController as preferences" ng-init="preferences.init()">
-    <h4></h4>
     <ul class="no-bullet m0" ng-show="!index.noFocusedWallet">
         <!-- 钱包别名 -->
         <li ng-click="$root.go('preferences.preferencesAlias')">

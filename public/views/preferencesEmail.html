@@ -4,11 +4,7 @@
   ng-init="titleSection='Email Notifications'; goBackToState = true">
 </div>
 
-
-
 <div class="content preferences" ng-controller="preferencesEmailController as prefEmail">
-
-  <h4></h4>
   <div class="onGoingProcess" ng-show="prefEmail.saving && !index.isOffline">
     <div class="onGoingProcess-content" ng-style="{'background-color':index.backgroundColor}">
       <div class="spinner">

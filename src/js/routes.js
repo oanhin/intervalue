@@ -495,7 +495,7 @@ angular
 				templateUrl: 'receive.html',
 				views: {
 					'main': {
-						templateUrl: 'receive.html'
+						templateUrl: 'views/receive.html'
 					},
 				}
 			})

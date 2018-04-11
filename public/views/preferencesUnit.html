@@ -6,7 +6,6 @@
 
 <!-- 单元数量设置视图 -->
 <div class="content preferences" ng-controller="preferencesUnitController as prefUnit">
-    <h4></h4>
     <ul class="no-bullet m0 ">
         <!-- 单元数量选项，选定后保存设置，相关页面都更新为设置的单元数量 -->
         <li ng-repeat="unit in prefUnit.unitOpts" ng-click="prefUnit.save(unit)" class="line-b p20 size-14">
