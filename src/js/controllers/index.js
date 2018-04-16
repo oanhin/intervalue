@@ -997,7 +997,7 @@ angular.module('copayApp.controllers').controller('indexController', function ($
 				profileService.assetMetadata[asset] = {decimals: balanceInfo.decimals, name: balanceInfo.name};
 			if (asset === "base" || asset == self.BLACKBYTES_ASSET || balanceInfo.name) {
 				// 此处为首页显示的资产数额
-				balanceInfo.total /= 1e18;
+				balanceInfo.total /= 1e+18;	//1e18
 				balanceInfo.totalStr = profileService.formatAmountWithUnit(balanceInfo.total, asset);				//带单位
 				balanceInfo.totalStrWithoutUnit = profileService.formatAmount(balanceInfo.total, asset);			//不带单位
 				balanceInfo.stableStr = profileService.formatAmountWithUnit(balanceInfo.stable, asset);				//稳定数额

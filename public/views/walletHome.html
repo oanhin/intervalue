@@ -139,11 +139,11 @@
                                 <div ng-click='index.updateAll(); index.updateHistoryFromNetwork()'>
                                     <!-- banner显示金额信息 -->
 									<!-- 资产数额字符串超过16个字符, 显示带单位资产数额 -->
-                                    <strong class="size-36" ng-if="balance.totalStr && balance.totalStr.length <= 16">
+                                    <strong class="size-36" ng-if="balance.totalStr && balance.totalStr.length <= 26">
                                         {{balance.totalStr}}
                                     </strong>
 									<!-- 资产数额字符串不超过16个字符, 显示不带单位资产数额和名称 -->
-                                    <div ng-if="balance.totalStr && balance.totalStr.length > 16">
+                                    <div ng-if="balance.totalStr && balance.totalStr.length > 26">
                                         <div><strong class="size-36">{{balance.totalStrWithoutUnit}}</strong></div>
                                         <div class="of-asset-name">{{balance.name}}</div>
                                     </div>
@@ -158,16 +158,22 @@
                                         <span ng-if="balance.pendingStr">{{balance.pendingStr}}</span>
                                         <span ng-if="!balance.pendingStr">{{balance.pending.toLocaleString()}}</span>
                                     </div>
+
+									<div class="size-14 secondrow"
+										ng-if="!balance.pending && balance.asset === 'base' && home.exchangeRates.GBYTE_USD && balance.total">
+										<span>= {{ balance.total }} atom</span>
+									</div>
+
 									<!-- atom资产，兑换成美金数额 -->
-                                    <div class="size-14 secondrow"
-                                         ng-if="!balance.pending && balance.asset === 'base' && home.exchangeRates.GBYTE_USD && balance.total">
-                                        <span>≈ ${{ (balance.total * home.exchangeRates.GBYTE_USD / 1e9).toLocaleString([], {maximumFractionDigits: 2}) }}</span>
-                                    </div>
+                                    <!--<div class="size-14 secondrow"-->
+                                         <!--ng-if="!balance.pending && balance.asset === 'base' && home.exchangeRates.GBYTE_USD && balance.total">-->
+                                        <!--<span>≈ ${{ (balance.total * home.exchangeRates.GBYTE_USD / 1e9).toLocaleString([], {maximumFractionDigits: 2}) }}</span>-->
+                                    <!--</div>-->
                                     <!-- blackbytes资产，兑换成美金比例 -->
-                                    <div class="size-14 secondrow"
-                                         ng-if="!balance.pending && balance.asset === index.BLACKBYTES_ASSET && home.exchangeRates.GBB_USD && balance.total">
-                                        <span>≈ ${{ (balance.total * home.exchangeRates.GBB_USD / 1e9).toLocaleString([], {maximumFractionDigits: 2}) }}</span>
-                                    </div>
+                                    <!--<div class="size-14 secondrow"-->
+                                         <!--ng-if="!balance.pending && balance.asset === index.BLACKBYTES_ASSET && home.exchangeRates.GBB_USD && balance.total">-->
+                                        <!--<span>≈ ${{ (balance.total * home.exchangeRates.GBB_USD / 1e9).toLocaleString([], {maximumFractionDigits: 2}) }}</span>-->
+                                    <!--</div>-->
                                 </div>
                                 <style ng-if="index.isCordova">
                                     .rn-carousel-controls {
