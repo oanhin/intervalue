@@ -1,22 +1,78 @@
-<nav class="tab-bar">
-    <section class="left-small">
-        <a ng-click="cancel()" class="p10">
-            <span class="text-close" translate>Close</span>
-        </a>
-    </section>
-    <section class="middle tab-bar-section">
-        <h1 class="title ellipsis" ng-style="{'color':color}" translate>
-            Request a specific amount
-        </h1>
-    </section>
-</nav>
+
+<div
+	class="topbar-container"
+	ng-include="'views/includes/topbar.html'"
+	ng-init="titleSection='Request a specific amount'; closeToHome = true; noColor = true">
+</div>
 
 <!-- 要求特定金额对应视图 -->
 <div class="modal-content fix-modals-touch">
     <!-- amountInSmallestUnits = true -->
-    <div class="m20b" ng-show="amountInSmallestUnits">
-        <h4 class="title m0" translate>QR Code</h4>
-        <ul class="no-bullet size-14 m0">
+    <div class="m20b row large-12 columns" ng-show="amountInSmallestUnits">
+        <h4 class="title m0 size-14" style="padding-top: 15px;color: #2fa1d2;margin-top: 15px;background-color: #d3e2e8" translate>QR Code</h4>
+
+		<!-- 地址二维码 -->
+		<div style="padding-top: 35px">
+			<div class="box-notification" ng-show="home.addrError">
+				<span class="text-warning">{{home.addrError|translate}}</span>
+			</div>
+			<div class="text-center"
+				 ng-click="home.copyAddress(index.shared_address || home.addr[index.walletId])"
+				 ng-show="home.addr[index.walletId] || home.generatingAddress">
+				<qrcode size="135"
+						data="{{home.protocol}}:{{index.shared_address || home.addr[index.walletId]}}"></qrcode>
+				<div ng-show="home.generatingAddress" style="position:relative; top:-226px; height:0px">
+					<div style="height:220px; width:220px; margin:auto; background: url(img/qr.png) white">
+						<div class="spinner" style="margin-top:80px;margin-bottom: 30px">
+							<div class="rect1"></div>
+							<div class="rect2"></div>
+							<div class="rect3"></div>
+							<div class="rect4"></div>
+							<div class="rect5"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="line-t text-center" style="margin-top: 30px;">
+			<h4 ng-class="{'enable_text_select': !index.isCordova}" class="size-12" style="height: 50px;display: inline-block;line-height: 50px;margin: 0">
+				{{index.shared_address || (home.generatingAddress ? '...' :
+				home.addr[index.walletId])}}
+			</h4>
+		</div>
+
+		<!-- 分享地址 -->
+		<div ng-show="home.addr[index.walletId]" >
+			<div class="m10t text-center" ng-show="index.isCordova">
+				<!--<div class="m10t text-center" ng-show="true">-->
+				<span class="button outline dark-gray tiny round"
+					  ng-click="home.shareAddress(home.addr[index.walletId])">
+										<i class="fi-share"></i>
+										<span translate>Share address</span>
+									</span>
+			</div>
+			<div class="size-12 text-center">
+				<span ng-if="index.shared_address" translate>This address is shared with {{index.shared_address_cosigners}}.</span>
+				<span ng-if="!index.shared_address" translate>Share this wallet address to receive payments.</span>
+				<span ng-if="!index.shared_address && 0" translate>To protect your privacy, new addresses are generated automatically once you use them.</span>
+			</div>
+		</div>
+
+
+		<div ng-show="!index.needsBackup" style="background-color: #FFFFFF">
+			<div class="text-center p20h">
+
+				<div ng-show="!agreed" >
+					<button style="width: 100%;" class="#2fa1d2 round tiny m15t size-16"  ng-click="home.shareAddress(home.addr[index.walletId])" ng-disabled="loading" translate>
+						Share address
+					</button>
+				</div>
+			</div>
+		</div>
+
+
+		<!--<ul class="no-bullet size-14 m0">
             <li class="line-b p10 oh text-center">
                 <qrcode size="220" version="6"
                         data="{{protocol}}:{{addr + '?amount=' + amountInSmallestUnits + asset_param}}"></qrcode>
@@ -30,22 +86,22 @@
             </li>
         </ul>
 
-        <!-- 详情 -->
+        &lt;!&ndash; 详情 &ndash;&gt;
         <h4 class="title m0" translate>Details</h4>
         <ul class="no-bullet size-14 m0">
-            <!-- 定制 -->
+            &lt;!&ndash; 定制 &ndash;&gt;
             <li class="line-b p10 oh">
                 <span class="text-gray" translate>Address</span>:
                 <span class="right">
                     <span class="text-gray enable_text_select">{{addr}}</span>
                 </span>
             </li>
-            <!-- 金额 -->
+            &lt;!&ndash; 金额 &ndash;&gt;
             <li class="line-b p10 oh">
                 <span class="text-gray" translate>Amount</span>:
                 <span class="right">{{customizedAmountUnit}}</span>
             </li>
-        </ul>
+        </ul>-->
     </div>
 
     <!-- amountInSmallestUnits = false -->
@@ -64,11 +120,13 @@
                 </div>
                 <!-- 金额 -->
                 <div>
-                    <label for="amount">
-                        <span translate>Amount</span>
-                    </label>
-                    <div class="input">
-                        <input type="number" id="amount" name="amount" ng-attr-placeholder="{{'Amount'|translate}}"
+                    <div style="float: left;width: 40px">
+						<label for="amount" >
+							<span style="font-size: 16px" translate>Amount</span>
+						</label>
+					</div>
+                    <div class="input" style="float: left;width: 310px;">
+                        <input type="number" id="amount" name="amount"
                                ng-model="_customAmount" valid-amount="{{index.arrBalances[index.assetIndex].asset|uppercase}}"
                                required autocomplete="off">
                         <a class="postfix" ng-if="index.arrBalances[index.assetIndex].asset === 'base'">{{unitName|uppercase}}</a>
@@ -87,8 +145,9 @@
                     <!--<select class="m10t" ng-model="index.assetIndex" id="asset" name="asset"-->
                             <!--ng-options="index.arrBalances.indexOf(balance) as (balance.asset === 'base' ? 'INVE' : (balance.asset === index.BLACKBYTES_ASSET ? 'blackbytes' : (balance.name || balance.asset))) for balance in index.arrBalances|filter:'base'"></select>-->
                 <!--</div>-->
-                <button type="submit" class="button black round expand" ng-disabled="amountForm.$invalid"
-                        ng-style="{'background-color':color}" translate>
+                <button type="submit" class="button #2fa1d2 round tiny"
+						style="width: 100%;margin-top: 115px;"
+                    translate>
                     {{buttonLabel}}
                 </button>
             </form>
