@@ -138,26 +138,32 @@
                                 ng-repeat="balance in index.arrBalances|filter:'base'"> <!-- 过滤base页 -->
                                 <div ng-click='index.updateAll(); index.updateHistoryFromNetwork()'>
                                     <!-- banner显示金额信息 -->
+									<!-- 资产数额字符串超过16个字符, 显示带单位资产数额 -->
                                     <strong class="size-36" ng-if="balance.totalStr && balance.totalStr.length <= 16">
-                                        {{balance.totalStr|uppercase}}
+                                        {{balance.totalStr}}
                                     </strong>
+									<!-- 资产数额字符串不超过16个字符, 显示不带单位资产数额和名称 -->
                                     <div ng-if="balance.totalStr && balance.totalStr.length > 16">
                                         <div><strong class="size-36">{{balance.totalStrWithoutUnit}}</strong></div>
                                         <div class="of-asset-name">{{balance.name}}</div>
                                     </div>
+									<!-- 资产数额字符串为空，则直接显示资产金额本地字符串 -->
                                     <div ng-if="!balance.totalStr">
                                         <div><strong class="size-36">{{balance.total.toLocaleString()}}</strong></div>
                                         <div class="of-asset">of {{balance.asset}}</div>
                                     </div>
+									<!-- 确认中，则显示确认中资产数额字符串 -->
                                     <div class="size-14 secondrow" ng-if="balance.pending">
                                         <span translate>Including pending confirmation</span>:
                                         <span ng-if="balance.pendingStr">{{balance.pendingStr}}</span>
                                         <span ng-if="!balance.pendingStr">{{balance.pending.toLocaleString()}}</span>
                                     </div>
+									<!-- atom资产，兑换成美金数额 -->
                                     <div class="size-14 secondrow"
                                          ng-if="!balance.pending && balance.asset === 'base' && home.exchangeRates.GBYTE_USD && balance.total">
                                         <span>≈ ${{ (balance.total * home.exchangeRates.GBYTE_USD / 1e9).toLocaleString([], {maximumFractionDigits: 2}) }}</span>
                                     </div>
+                                    <!-- blackbytes资产，兑换成美金比例 -->
                                     <div class="size-14 secondrow"
                                          ng-if="!balance.pending && balance.asset === index.BLACKBYTES_ASSET && home.exchangeRates.GBB_USD && balance.total">
                                         <span>≈ ${{ (balance.total * home.exchangeRates.GBB_USD / 1e9).toLocaleString([], {maximumFractionDigits: 2}) }}</span>
@@ -258,25 +264,24 @@
 										class="label tu radius bg0745bc"
 										ng-show="btx.action == 'received' && btx.confirmations"
 										translate>
-								Received
-							</span>
-									<!--已发送  确认+发送-->
-									<span
-										style="font-size: 12px;width: 90px;padding: 6px 0;"
-										class="label tu bga1a1a1 radius"
-										ng-show="btx.action == 'sent' && btx.confirmations"
-										translate>
-								Sent
-							</span>
-									<!--收到+发送  待确认-->
-									<span
-										style="font-size: 8px;width: 90px;padding: 6px 0;"
-										class="label tu bgred radius"
-										ng-show="!btx.confirmations || btx.confirmations == 0"
-										translate>
-								Unconfirmed
-							</span>
-
+										Received
+									</span>
+											<!--已发送  确认+发送-->
+											<span
+												style="font-size: 12px;width: 90px;padding: 6px 0;"
+												class="label tu bga1a1a1 radius"
+												ng-show="btx.action == 'sent' && btx.confirmations"
+												translate>
+										Sent
+									</span>
+											<!--收到+发送  待确认-->
+											<span
+												style="font-size: 8px;width: 90px;padding: 6px 0;"
+												class="label tu bgred radius"
+												ng-show="!btx.confirmations || btx.confirmations == 0"
+												translate>
+										Unconfirmed
+									</span>
 
 									<!--移动资产-->
 									<span
@@ -284,27 +289,27 @@
 										class="label tu light-gray radius"
 										ng-show="btx.action == 'moved' && btx.confirmations"
 										translate>
-								Moved
-							</span>
+										Moved
+									</span>
+
 									<!--移动资产 结束-->
-
-
-									<span style="font-size: 12px;width: 100px;padding: 6px 0;" class="label tu warning radius" ng-show="btx.action == 'invalid'" translate>Invalid</span>
+									<span style="font-size: 12px;width: 100px;padding: 6px 0;" class="label tu warning radius" ng-show="btx.action == 'invalid'" translate>
+										Invalid
+									</span>
 								</div>
-
 
 
 								<!--交易的 四种状态 对应四种符号-->
 								<!--<div class="large-4 medium-4 small-4 columns m5r" style="padding:3px 0 0 10px;font-weight: bold;width: 140px; ">-->
 								<div class="large-4 medium-4 small-4 columns m5r" style="width: 55%; position: absolute; left: 110px; padding-top:2px; ">
-							<span class="size-16">
-				  				<span ng-if="btx.action == 'received'" style="position: absolute; left: 0;">+</span>
-				  				<span ng-if="btx.action == 'sent'" style="position: absolute; left: 0;">-</span>
-				  				<span class="size-12" ng-if="btx.action == 'invalid'" translate style="position: absolute; left: 0;"> (possible double spend) </span>
+									<span class="size-16">
+										<span ng-if="btx.action == 'received'" style="position: absolute; left: 0;">+</span>
+										<span ng-if="btx.action == 'sent'" style="position: absolute; left: 0;">-</span>
+										<span class="size-12" ng-if="btx.action == 'invalid'" translate style="position: absolute; left: 0;"> (possible double spend) </span>
 
-								<!--金额-->
-				  				<span ng-if="btx.action != 'invalid'" style="padding-left: 10px">  {{btx.amountStr}}   </span>
-							</span>
+										<!--金额-->
+										<span ng-if="btx.action != 'invalid'" style="padding-left: 10px">  {{btx.amountStr}}   </span>
+									</span>
 								</div>
 
 								<!--交易发生时间-->
