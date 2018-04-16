@@ -17,7 +17,7 @@ angular.module('copayApp.controllers').controller('indexController', function ($
 	self.isCordova = isCordova;
 	self.isSafari = isMobile.Safari();
 	self.onGoingProcess = {};
-	self.historyShowLimit = 10;
+	self.historyShowLimit = 15;
 	self.updatingTxHistory = {};
 	self.bSwipeSuspended = false;
 	self.arrBalances = [];
@@ -996,10 +996,12 @@ angular.module('copayApp.controllers').controller('indexController', function ($
 			if (balanceInfo.name)
 				profileService.assetMetadata[asset] = {decimals: balanceInfo.decimals, name: balanceInfo.name};
 			if (asset === "base" || asset == self.BLACKBYTES_ASSET || balanceInfo.name) {
-				balanceInfo.totalStr = profileService.formatAmountWithUnit(balanceInfo.total, asset);
-				balanceInfo.totalStrWithoutUnit = profileService.formatAmount(balanceInfo.total, asset);
-				balanceInfo.stableStr = profileService.formatAmountWithUnit(balanceInfo.stable, asset);
-				balanceInfo.pendingStr = profileService.formatAmountWithUnitIfShort(balanceInfo.pending, asset);
+				// 此处为首页显示的资产数额
+				balanceInfo.total /= 1e+18;	//1e18
+				balanceInfo.totalStr = profileService.formatAmountWithUnit(balanceInfo.total, asset);				//带单位
+				balanceInfo.totalStrWithoutUnit = profileService.formatAmount(balanceInfo.total, asset);			//不带单位
+				balanceInfo.stableStr = profileService.formatAmountWithUnit(balanceInfo.stable, asset);				//稳定数额
+				balanceInfo.pendingStr = profileService.formatAmountWithUnitIfShort(balanceInfo.pending, asset);	//确认中数额
 				if (typeof balanceInfo.shared === 'number')
 					balanceInfo.sharedStr = profileService.formatAmountWithUnitIfShort(balanceInfo.shared, asset);
 				if (!balanceInfo.name) {
@@ -1137,7 +1139,7 @@ angular.module('copayApp.controllers').controller('indexController', function ($
 					if (it.action == 'moved')
 						_note += ' Moved:' + it.amount
 
-					dataString = formatDate(it.time * 1000) + ',' + formatString(it.addressTo) + ',' + _note + ',' + _amount/10000000000000000 + ',INVE,,,,';
+					dataString = formatDate(it.time * 1000) + ',' + formatString(it.addressTo) + ',' + _note + ',' + _amount/1e18 + ',INVE,,,,';
 					csvContent += dataString + "\n";
 
 				});

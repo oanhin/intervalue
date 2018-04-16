@@ -9,13 +9,13 @@ angular.module('copayApp.services').factory('txFormatService', function (profile
 		if (!amount) return;
 		if (asset !== "base" && asset !== constants.BLACKBYTES_ASSET && !profileService.assetMetadata[asset])
 			return amount;
-		return profileService.formatAmountWithUnit(amount, asset);
+		return profileService.formatAmountWithUnit(amount/1e18, asset);
 	};
 
 	// 更改代码 交易小费单位是 GA
 	var formatFeeStr = function (fee) {
 		if (!fee) return;
-		return fee/1000000000000000000 + ' INVE';
+		return fee/1e18 + ' INVE';
 	};
 
 	root.processTx = function (tx) {

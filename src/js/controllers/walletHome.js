@@ -1072,7 +1072,7 @@ angular.module('copayApp.controllers')
 								else if (err.match(/connection closed/))
 									err = gettextCatalog.getString('[internal] connection closed') ;
 								else if (err.match(/funds from/))
-									err = err.substring(err.indexOf("from")+4, err.indexOf("for")) + gettextCatalog.getString(err.substr(0,err.indexOf("from"))) + gettextCatalog.getString(". It needs atleast ")  + parseInt(err.substring(err.indexOf("for")+3, err.length))/1000000000000000000 + "INVE";
+									err = err.substring(err.indexOf("from")+4, err.indexOf("for")) + gettextCatalog.getString(err.substr(0,err.indexOf("from"))) + gettextCatalog.getString(". It needs atleast ")  + parseInt(err.substring(err.indexOf("for")+3, err.length))/1e18 + "INVE";
 								return self.setSendError(err);
 							}
 							var binding = self.binding;
