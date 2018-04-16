@@ -6,67 +6,73 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: url('../font/Roboto-Thin.ttf') format('truetype');
+  src: url('/public/font/Roboto-Thin.ttf') format('truetype');
   font-weight: thin;
   font-style: normal;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../font/Roboto-ThinItalic.ttf') format('truetype');
+  src: url('/public/font/Roboto-ThinItalic.ttf') format('truetype');
   font-weight: thin;
   font-style: italic;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../font/Roboto-Light.ttf') format('truetype');
+  src: url('/public/font/Roboto-Light.ttf') format('truetype');
   font-weight: light;
   font-style: normal;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../font/Roboto-LightItalic.ttf') format('truetype');
+  src: url('/public/font/Roboto-LightItalic.ttf') format('truetype');
   font-weight: light;
   font-style: italic;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../font/Roboto-Medium.ttf') format('truetype');
+  src: url('/public/font/Roboto-Medium.ttf') format('truetype');
   font-weight: medium;
   font-style: normal;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../font/Roboto-MediumItalic.ttf') format('truetype');
+  src: url('/public/font/Roboto-MediumItalic.ttf') format('truetype');
   font-weight: medium;
   font-style: italic;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../font/Roboto-Regular.ttf') format('truetype');
+  src: url('/public/font/Roboto-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../font/Roboto-Italic.ttf') format('truetype');
+  src: url('/public/font/Roboto-Italic.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../font/Roboto-Bold.ttf') format('truetype');
+  src: url('/public/font/Roboto-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../font/Roboto-BoldItalic.ttf') format('truetype');
+  src: url('/public/font/Roboto-BoldItalic.ttf') format('truetype');
   font-weight: bold;
   font-style: italic;
+}
+@font-face {
+	font-family: 'Hiragino';
+	src: url('/public/font/Hiragino-Sans-GB-W3.otf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
 }
 
  body {
-  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Hiragino, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 
@@ -109,12 +115,12 @@ h4, h2 span.small {
 }
 
 h4.title {
-  background: #F1F3F5;
+  background: #eceff5;
   padding: 0.8rem;
-  text-transform: uppercase;
-  color: #2C3E50;
+  text-transform: none;
+  color: #FFFFFF;
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: 14px;
 }
 
 h4.title a {
@@ -329,7 +335,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill, inpu
   position: absolute;
   top: 45px;
   bottom: 0;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .content.disclaimer {

@@ -11,7 +11,8 @@
 </style>
 <div class="splash content text-center" 
 	ng-init="splash.init()" 
-	ng-controller="splashController as splash">
+	ng-controller="splashController as splash"
+>
 	<div ng-if="!index.hasProfile">
 
 		<!-- 选择是作为全节点（存储所有数据）还是轻节点（仅存储自己数据） -->
@@ -21,102 +22,120 @@
 			以后进入打开InterValue将不会再显示
 		-->
 		<div ng-if="splash.step === 'wallet_type'">
-			<div class="row text-left" style="margin-top: 40px">
-				<div class="start-button large-10 medium-10 small-10 medium-centered small-centered large-centered columns">
-					<!-- 前言 -->
-					<label><span class="text-white size-14 center" translate>Please choose how much data to store in your wallet</span></label>
-					<p class="text-gray size-14 m0 text-light center" translate>This choice cannot be changed later</p>
-					<!-- 轻节点选项 -->
-					<div class="m20t">
-						<div style="display: table">
-							<div style="display: table-cell; padding-right: 10px"><input type="radio" name="wallet_type" value="light" ng-model="splash.wallet_type" id="wallet_type_light"></div>
-							<div style="display: table-cell"><label class="text-gray size-14" style="vertical-align: middle" for="wallet_type_light" translate>Keep only data relevant to you</label></div>
+			<div style="background-color: #283d58;height: 52px">
+				<div style="padding-top:15px">
+					<label><span class="text-white size-14 center"  translate>Please choose how much data to store in your wallet</span></label>
+				</div>
+			</div>
+			<div class="row text-center" style="background-color: #eceff5;">
+				<div class="start-button p20h">
+						<div style="background-color: #FFFFFF;padding: 0px 20px 20px 20px ">
+							<div style="height: 54px">
+								<div style="padding-top: 15px">
+									<!-- 前言 -->
+									<i class="iconfont icon-09jingshi" style="color: #f2715c;font-size: 20px;"></i>
+									<p class="text-gray size-14 m0 text-light center" style="display: inline-block" translate>This choice cannot be changed later</p>
+								</div>
+							</div>
+							<!-- 轻节点选项 -->
+							<div class="m20t">
+								<div style="display: table">
+									<div style="display: table-cell; padding-right: 10px"><input type="radio" name="wallet_type" value="light" ng-model="splash.wallet_type" id="wallet_type_light"></div>
+									<div style="display: table-cell"><label class="text-gray size-14" style="vertical-align: middle" for="wallet_type_light" translate>Keep only data relevant to you</label></div>
+								</div>
+								<div style="padding: 0px 0px 20px 22px;text-align: left">
+									<p class="text-gray size-14 m0 text-light "  translate>
+										The wallet vendor will be able to know some of your balances and will be able to see which transactions are yours, but you can start using the wallet immediately and the wallet is fully functional.
+									</p>
+								</div>
+							</div>
+							<!-- 全节点选项 -->
+							<div class="m20t">
+								<div style="display: table">
+									<div style="display: table-cell; padding-right: 10px"><input type="radio" name="wallet_type" value="full" ng-model="splash.wallet_type" id="wallet_type_full"></div>
+									<div style="display: table-cell"><label class="text-gray size-14" style="vertical-align: middle;text-transform: none" for="wallet_type_full" translate>Download the entire InterValue database</label></div>
+								</div>
+								<div style="padding: 0px 0px 20px 22px;text-align: left">
+									<p class="text-gray size-14 m0 text-light" translate>
+										This option is better for privacy but will take  several gigabytes of storage and the initial sync will take several days.  CPU load will be high during sync.
+									</p>
+								</div>
+							</div>
 						</div>
-						<p class="text-gray size-14 m0 text-light" translate>
-							The wallet vendor will be able to know some of your balances and will be able to see which transactions are yours, but you can start using the wallet immediately and the wallet is fully functional.
-						</p>
-					</div>
-					<!-- 全节点选项 -->
-					<div class="m20t">
-						<div style="display: table">
-							<div style="display: table-cell; padding-right: 10px"><input type="radio" name="wallet_type" value="full" ng-model="splash.wallet_type" id="wallet_type_full"></div>
-							<div style="display: table-cell"><label class="text-gray size-14" style="vertical-align: middle" for="wallet_type_full" translate>Download the entire INVE database</label></div>
-						</div>
-						<p class="text-gray size-14 m0 text-light" translate>
-							This option is better for privacy but will take  several gigabytes of storage and the initial sync will take several days.  CPU load will be high during sync.
-						</p>
-					</div>
 					<!-- 保存设置 -->
-					<button ng-click="splash.setWalletType()" class="button black expand round size-12 text-spacing m20t" translate>
+					<button style="width: 100%;margin: 100px 0px 49px 0px" ng-click="splash.setWalletType()" class="#2fa1d2 round tiny" translate>
 						CONTINUE
 					</button>
 				</div>
 			</div>
 		</div>
 
+
 		<!-- 欢迎页面 -->
-		<div ng-if="splash.step === 'device_name'">
+		<div ng-if="splash.step === 'device_name'" style="background-color: #FFFFFF">
 			<!-- 标题 -->
-			<div class="row">
+			<div class="row" style="background-color: #1a2d48;padding-bottom: 50px">
 				<div class="medium-centered small-centered large-centered columns">
 					<div class="m20t">
-                    	<span class="text-bold size-16 text-white center" translate>WELCOME TO INTERVALUE</span>
-						<p class="text-gray size-14 m0 text-light center" donttranslate>Next Generation Globe Value Interenet</p>
+						<span class="text-bold size-18 text-white center" translate>WELCOME TO INTERVALUE</span>
+						<p class="text-gray size-12 m0 text-white center" donttranslate>Next Generation Globe Value Interenet</p>
 					</div>
 				</div>
 			</div>
 			<!-- 图标 -->
 			<div class="row">
 				<div class="container-image large-3 medium-3 small-3 medium-centered small-centered large-centered columns">
-					<img src="img/icon-splash.png" alt="icon" width="100%">
+					<img src="img/inve.png" alt="icon" width="100%">
 				</div>
 			</div>
-			<!-- 错误信息 -->
-			<div class="text-center size-12 text-warning" ng-show="splash.error && !splash.creatingProfile">
-				{{splash.error|translate}}. <span translate>Retrying...</span>
-			</div>
-			<!-- 没有加载完成个人设置信息时，显示处理进度和状态 -->
-			<div class="onGoingProcess" ng-show="splash.creatingProfile">
-				<div class="onGoingProcess-content" ng-style="{'background-color':'#222'}">
-					<div class="spinner">
-						<div class="rect1"></div>
-						<div class="rect2"></div>
-						<div class="rect3"></div>
-						<div class="rect4"></div>
-						<div class="rect5"></div>
-					</div>
-					<span translate>Creating Profile...</span>
+				<!-- 错误信息 -->
+				<div class="text-center size-12 text-warning" ng-show="splash.error && !splash.creatingProfile">
+					{{splash.error|translate}}. <span translate>Retrying...</span>
 				</div>
-			</div>
-			<!-- 没有加载完成个人设置信息时，显示设备设置页面 -->
-			<div class="row" ng-show="!splash.creatingProfile">
-				<div class="start-button large-8 medium-8 small-8 medium-centered small-centered large-centered columns">
-					<!-- 没有设置设备名时 -->
-					<div ng-show="!splash.bDeviceNameSet">
-						<!-- 设置设备名 -->
-						<label><span class="text-gray" translate>Please name this device</span></label>
-						<input type="text" id="deviceName" type="text" name="deviceName" ng-model="splash.deviceName" class="text-gray dark-centered-input">
-						<!-- 继续 -->
-						<button ng-click="splash.saveDeviceName()" class="button black expand round size-12 text-spacing" ng-disabled="!splash.deviceName" translate>
-							CONTINUE
-						</button>
+				<!-- 没有加载完成个人设置信息时，显示处理进度和状态 -->
+				<div class="onGoingProcess" ng-show="splash.creatingProfile">
+					<div class="onGoingProcess-content" ng-style="{'background-color':'#222'}">
+						<div class="spinner">
+							<div class="rect1"></div>
+							<div class="rect2"></div>
+							<div class="rect3"></div>
+							<div class="rect4"></div>
+							<div class="rect5"></div>
+						</div>
+						<span translate>Creating Profile...</span>
 					</div>
+				</div>
+				<!-- 没有加载完成个人设置信息时，显示设备设置页面 -->
+				<div class="row" ng-show="!splash.creatingProfile" style="background-color: #FFFFFF">
+					<div class="start-button p20h">
 
-					<!-- 已设置设备名时(初次设置完设备名时也会打开下面视图) -->
-					<div ng-show="splash.bDeviceNameSet">
-						<p class="text-gray size-14 m0 text-light m20b" translate>Your wallet will be created on this device, keep it safe.  See your backup options in the Settings menu.</p>
-						<p class="text-gray size-14 m0 text-light m20b" translate>Also in the Settings menu, you will find security options such as setting a password.</p>
-						<!-- 开始 -->
-						<button ng-click="splash.create()" class="button black expand round size-12 text-spacing" translate>
-							GET STARTED
-						</button>
+						<!-- 没有设置设备名时 -->
+						<div ng-show="!splash.bDeviceNameSet" class="m60t">
+							<!-- 设置设备名 -->
+							<label><span class="text-gray size-14" translate>Please name this device</span></label>
+							<input type="text" id="deviceName" ng-model="splash.deviceName" class="text-gray dark-centered-input" style="font-size: 16px">
+							<!-- 继续 -->
+							<button style="width: 100%;margin: 60px 0px 49px 0px" ng-click="splash.saveDeviceName()" ng-disabled="!splash.deviceName" class="#2fa1d2 round tiny size-16"  translate>
+								CONTINUE
+							</button>
+						</div>
+
+						<!-- 已设置设备名时(初次设置完设备名时也会打开下面视图) -->
+						<div ng-show="splash.bDeviceNameSet">
+							<div>
+								<p class="text-gray size-12 m0 text-light m20b" style="display: inline" translate>Your wallet will be created on this device,</p><br>
+								<span class="text-gray size-12 m0 text-light m20b"  translate>keep it safe.  See your backup options in the Settings menu.</span><br>
+								<span class="text-gray size-12 m0 text-light m20b"  translate>Also in the Settings menu, you will find security options such as setting a password.</span>
+							</div>
+							<!-- 开始 -->
+							<button ng-click="splash.create()" class="#2fa1d2 round tiny size-16" style="width: 100%;margin: 130px 0px 49px 0px" translate>
+								GET STARTED
+							</button>
+						</div>
+						<!--<p class="text-gray m5b size-12" translate>Already have a wallet?</p>-->
+						<!--<button  ng-click="splash.create(true)" class="button round outline dark-gray tiny" ng-disabled="!splash.deviceName" translate>Import backup </button>-->
 					</div>
-					<!--
-					<p class="text-gray m5b size-12" translate>Already have a wallet?</p>
-					<button  ng-click="splash.create(true)" class="button round outline dark-gray tiny" ng-disabled="!splash.deviceName" translate>Import backup </button>
-					-->
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
