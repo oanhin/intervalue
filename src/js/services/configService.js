@@ -59,7 +59,7 @@ angular.module('copayApp.services').factory('configService', function (storageSe
             totalCosigners: 6
         },
 
-        hub: (constants.alt === '2' && isTestnet) ? 'inve07.hashproject.net/bb-test' : 'inve07.hashproject.net/bb',
+        hub: (constants.alt === '2' && isTestnet) ? 'hub5.dd3s.com/bb-test' : 'hub5.dd3s.com/bb',
 
         // requires bluetooth permission on android
         //deviceName: /*isCordova ? cordova.plugins.deviceName.name : */require('os').hostname(),

@@ -4,7 +4,7 @@ angular.module('copayApp.controllers').controller('preferencesHubController',
     function ($scope, $timeout, configService, go, autoUpdatingWitnessesList) {
         var config = configService.getSync();
         var initHubEdit = false;
-        this.hub = config.hub || 'inve07.hashproject.net';     // 默认Hub设置，刘星修改
+        this.hub = config.hub || 'hub5.dd3s.com/bb';     // 默认Hub设置，刘星修改
 
         this.currentAutoUpdWitnessesList = autoUpdatingWitnessesList.autoUpdate;
         $scope.autoUpdWitnessesList = autoUpdatingWitnessesList.autoUpdate;
