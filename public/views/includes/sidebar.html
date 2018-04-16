@@ -1,27 +1,46 @@
 <!-- 侧边栏视图 -->
 <nav class="sidebar left-off-canvas-menu" >
 	<ul >
-		<!-- 扫一扫 -->
-	  	<!--<li ng-show="showCamera">-->
+		<!--&lt;!&ndash; 扫一扫 &ndash;&gt;
+	  	&lt;!&ndash;<li ng-show="showCamera">&ndash;&gt;
 	  	<li >
 			<qr-scanner ng-show="index.isComplete" on-scan="topbar.onQrCodeScanned(data)"
 				before-scan="topbar.onBeforeScan()"></qr-scanner>
-		</li>
+		</li>-->
 
-		<!-- 收款地址 -->
+		<!-- 扫一扫 -->
+		<li>
+			<a ng-click="$root.go('scanner')" class="oh">
+				<i class="iconfont icon-saoyisao">&ensp;</i>
+				<div class="tu text-bold" style="display: inline-block">
+					<span class="size-12" translate>Scanner</span>
+					<!--<qr-scanner class="size-12" translate>Scan</qr-scanner>-->
+				</div>
+			</a>
+		</li>
+		<!--&lt;!&ndash; 收款地址 &ndash;&gt;
 		<li>
 			<a ng-click="$root.go('receive')" >
 				<i class="icon-arrow-right3 size-18 right m10t"></i>
 				<i class="fi-plus size-24 icon"></i>
 				<span class="size-12 text-bold" translate>receive address</span>
-				<!--<div class="tu text-bold">-->
-					<!--<span class="size-12" translate>receive address</span>-->
-				<!--</div>-->
-				<!--<div translate>My INVE address</div>-->
+				&lt;!&ndash;<div class="tu text-bold">&ndash;&gt;
+					&lt;!&ndash;<span class="size-12" translate>receive address</span>&ndash;&gt;
+				&lt;!&ndash;</div>&ndash;&gt;
+				&lt;!&ndash;<div translate>My INVE address</div>&ndash;&gt;
+			</a>
+		</li>-->
+		<!-- 收款地址 -->
+		<li>
+			<a ng-click="$root.go('receive')" class="oh">
+				<i class="iconfont icon-dizhi">&ensp;</i>
+				<div class="tu text-bold" style="display: inline-block">
+					<span class="size-12" translate>receive address</span>
+				</div>
 			</a>
 		</li>
 
-		<!--添加钱包-->
+		<!--&lt;!&ndash;添加钱包&ndash;&gt;
 		<li>
 			<a ng-click="$root.go('correspondentDevices.addCorrespondentDevice');" class="oh">
 				<i class="icon-arrow-right3 size-18 right m10t"></i>
@@ -29,8 +48,21 @@
 				<div class="tu text-bold">
 					<span class="size-12" translate>Add wallet</span>
 				</div>
+				&lt;!&ndash;<div translate>Create a new wallet</div>&ndash;&gt;
+			</a>
+		</li>-->
+
+		<!--添加设备-->
+		<li>
+			<a ng-click="$root.go('correspondentDevices.addCorrespondentDevice')" class="oh">
+				<i class="iconfont icon-tianjia">&ensp;</i>
+				<div class="tu text-bold" style="display: inline-block">
+					<span class="size-12" translate>Add device</span>
+				</div>
 				<!--<div translate>Create a new wallet</div>-->
 			</a>
 		</li>
+	</ul>
+
 	</ul>
 </nav>
